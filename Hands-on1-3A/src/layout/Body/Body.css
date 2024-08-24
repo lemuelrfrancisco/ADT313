@@ -1,0 +1,106 @@
+.content-box{
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.content-text{
+    text-align: left;
+}
+
+.content-text-card{
+    background: #3E5C76;
+    color: #F0EBD8;
+    padding: 1px 8px;
+    width: fit-content;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.content-text-info{
+    width: 80%;
+    padding-bottom: 20px;
+}
+
+.btn{
+    display: inline-block;
+    margin: 0px 30px 0px 0px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icons {
+    margin-top: 50px;
+    display: flex;
+    gap: 25px;
+    justify-content: flex-start;
+  }
+
+  .icon {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .icon i {
+    font-size: 20px;
+    color: #3E5C76;
+  }
+
+  .icon:hover{
+    background: #3E5C76;
+  }
+
+  .icon:hover i{
+    color:  #F0EBD8;
+  }
+
+
+
+.image{
+    margin: auto 0;
+    width: 380px;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 20% 80% 81% 19% / 32% 17% 83% 68% ;
+    -webkit-border-radius: 20% 80% 81% 19% / 32% 17% 83% 68% ;
+    -moz-border-radius: 20% 80% 81% 19% / 32% 17% 83% 68% ;
+    -ms-border-radius: 20% 80% 81% 19% / 32% 17% 83% 68% ;
+    -o-border-radius: 20% 80% 81% 19% / 32% 17% 83% 68% ;
+    animation: imgFloat 7s ease-in-out infinite;
+    -webkit-animation: imgFloat 7s ease-in-out infinite;
+}
+
+.image img{
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+}
+
+
+@keyframes imgFloat {
+    50%{
+        transform: translateY(10px);
+        border-radius: 52% 48% 29% 71% / 76% 73% 27% 24% ;
+        -webkit-border-radius: 52% 48% 29% 71% / 76% 73% 27% 24% ;
+        -moz-border-radius: 52% 48% 29% 71% / 76% 73% 27% 24% ;
+        -ms-border-radius: 52% 48% 29% 71% / 76% 73% 27% 24% ;
+        -o-border-radius: 52% 48% 29% 71% / 76% 73% 27% 24% ;
+}
+}

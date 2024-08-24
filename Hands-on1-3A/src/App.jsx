@@ -1,8 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Name from './component/Name/Name';
-import Section from './component/Section/Section';
-import Description from './component/Description/Description';
+import Header from './layout/Header/Header';
+import Body from './layout/Body/Body';
 
 
 
@@ -16,9 +15,9 @@ function App() {
   }
   return (
     <div className="App">
-        <Name firstName={userInformation.firstName} lastName={userInformation.lastName}/>
-        <Section section={userInformation.section}/>
-        <Description description={userInformation.description}/>
+        <Header />
+        <Body firstName={userInformation.firstName} lastName={userInformation.lastName}
+              section={userInformation.section} description={userInformation.description}/>
     </div>
   );
 }

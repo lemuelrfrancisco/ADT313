@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+
+.header{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    margin: 70px 0 0 0 ;
+}
+
+.nav-name{
+    font-size: 30px;
+    font-weight: 600;
+    color: #3E5C76;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.btn{
+    font-weight: 500;
+    padding: 12px 20px;
+    background: #efefef;
+    color: #3E5C76;
+    border: none;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.btn:visited{
+    color: #3E5C76;
+}
+
+.btn>i{
+    margin-left: 10px;
+}
+.btn:hover{
+    background: #3E5C76;
+    color:  #F0EBD8;
+}

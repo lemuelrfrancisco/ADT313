@@ -3,7 +3,7 @@ import './Section.css'
 function Section({section}){
     return(
         <div>
-            <h2> {section}</h2>
+            <h3 className='section'> {section}</h3>
         </div>
     )
 }

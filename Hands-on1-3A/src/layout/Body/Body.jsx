@@ -28,9 +28,9 @@ function Body({firstName,lastName,section,description}){
                 </div>
 
                 <div className="social-icons">
-                    <a href='https://www.linkedin.com/in/franc-alvenn-dela-cruz/' className="icon"><i className="uil uil-facebook-f"></i></a>
+                    <a href='https://www.facebook.com/francalvenn' className="icon"><i className="uil uil-facebook-f"></i></a>
                     <a href='https://www.linkedin.com/in/franc-alvenn-dela-cruz/' className="icon"><i className="uil uil-linkedin-alt"></i></a>
-                    <div className="icon"><i className="uil uil-github-alt"></i></div>
+                    <a href='https://github.com/FrancAlvenn' className="icon"><i className="uil uil-github-alt"></i></a>
                 </div>
             </div>
 

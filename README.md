@@ -4,8 +4,9 @@ All
 
 Hands-on 2
 IT3B
-Austria, Neil Ryan Marc
-Dela Cruz, Nicole Antoinette
-Villena, Axis
-Pantaleon, Marko
-Bernabe, Raymond
+#Austria, Neil Ryan Marc
+#Dela Cruz, Nicole Antoinette
+#Villena, Axis
+#Pantaleon, Marko
+#Bernabe, Raymond
+#Arciana, Mark Joshua

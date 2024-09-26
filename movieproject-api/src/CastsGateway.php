@@ -1,6 +1,6 @@
 <?php
 
-class CastGateway
+class CastsGateway
 {
     private PDO $conn;
     public function __construct(Database $database)

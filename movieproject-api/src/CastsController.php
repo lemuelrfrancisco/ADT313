@@ -1,5 +1,5 @@
 <?php
-class CastController
+class CastsController
 {
     public function __construct(private CastGateway $gateway, private Auth $auth)
     {
@@ -68,11 +68,11 @@ class CastController
                 }
 
                 //file upload for cast image
-                if (!empty($_FILES['profilePath']['name']) && $type == 'form') {
-                    $profile_path = $_FILES['profilePath']['name'];
-                    $temp_path = $_FILES['profilePath']['tmp_name'];
-                    $file_size = $_FILES['profilePath']['size'];
-                    $temp = explode(".", $_FILES["profilePath"]["name"]);
+                if (!empty($_FILES['image']['name']) && $type == 'form') {
+                    $profile_path = $_FILES['image']['name'];
+                    $temp_path = $_FILES['image']['tmp_name'];
+                    $file_size = $_FILES['image']['size'];
+                    $temp = explode(".", $_FILES["image"]["name"]);
                     $new_profile_path = $temp[0].round(microtime(true)) . '.' . end($temp);
 
                     $upload_path = "uploads/";

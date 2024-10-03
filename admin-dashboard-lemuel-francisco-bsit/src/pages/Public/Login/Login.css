@@ -1,0 +1,45 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  padding: 4rem 2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-container > div {
+  margin-bottom: 12px;
+}
+
+.form-group {
+  display: flex;
+}
+
+.form-group label {
+  width: 70px;
+  margin-right: 8px;
+  text-align: left;
+}
+.errors {
+  color: red;
+  font-size: 12px;
+}
+.submit-container {
+  margin-top: 12px;
+  text-align: center;
+}
+.register-container {
+  text-align: center;
+}
+.show-password {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}

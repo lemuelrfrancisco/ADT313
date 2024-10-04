@@ -37,7 +37,7 @@ class Auth
             echo json_encode(["message" => $e->getMessage()]);
             return false;
         }
-        $this->user_id = $data["sub"];
+        $this->user_id = $data["userId"];
 
         return true;
     }

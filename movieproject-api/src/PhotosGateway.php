@@ -22,7 +22,7 @@ class PhotosGateway
     public function create(array $data): string
     {
         $sql = "INSERT INTO photos (movieId, userId, url, description) 
-                VALUES (:movieId, :userId, :name, :url, :characterName)";
+                VALUES (:movieId, :userId, :url, :description)";
         $res = $this->conn->prepare($sql);
 
         $res->bindValue(":userId",$data["userId"], PDO::PARAM_INT);

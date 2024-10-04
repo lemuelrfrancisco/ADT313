@@ -27,21 +27,24 @@ $codec = new JWTCodec;
 header("Access-Control-Allow-Origin: *");
 
 $auth = new Auth($user_gateway, $codec);
-if ($parts[2] !== 'user' && ($_SERVER["REQUEST_METHOD"] === "POST" || $_SERVER["REQUEST_METHOD"] === "DELETE" || $_SERVER["REQUEST_METHOD"] === "PATCH")) {
+if (($parts[2] !== 'user' && $parts[2] !== 'admin') && ($_SERVER["REQUEST_METHOD"] === "POST" || $_SERVER["REQUEST_METHOD"] === "DELETE" || $_SERVER["REQUEST_METHOD"] === "PATCH")) {
     //check access token if endpoint is not user and method are post, delete, patch
     if (!$auth->authenticateAccessToken()) {
         exit;
     }
 }
 switch ($parts[2]) {
-    case 'movies':
-        //movies endpoint
-        $id = $parts[3] ?? null;
+    case 'admin':
+        //admin endpoint
+        $action = $parts[3] ?? null;
+        if ($action === null) {
+            http_response_code(404);
+        }
 
-        $gateway = new MovieGateway($database);
+        $gateway = new AdminGateway($database);
 
-        $controller = new MovieController($gateway, $auth);
-        $controller->processRequest($_SERVER["REQUEST_METHOD"], $id);
+        $controller = new AdminController($gateway);
+        $controller->processRequest($_SERVER["REQUEST_METHOD"], $action);
         break;
 
     case 'user':
@@ -56,6 +59,37 @@ switch ($parts[2]) {
         $controller = new UserController($gateway);
         $controller->processRequest($_SERVER["REQUEST_METHOD"], $action);
         break;
+
+    case 'movies':
+        //movies endpoint
+        $id = $parts[3] ?? null;
+
+        $gateway = new MovieGateway($database);
+
+        $controller = new MovieController($gateway, $auth);
+        $controller->processRequest($_SERVER["REQUEST_METHOD"], $id);
+        break;
+
+    case 'photos':
+        //photos endpoint
+        $id = $parts[3] ?? null;
+
+        $gateway = new PhotosGateway($database);
+
+        $controller = new PhotosController($gateway, $auth);
+        $controller->processRequest($_SERVER["REQUEST_METHOD"], $id);
+        break;
+
+    case 'videos':
+        //videos endpoint
+        $id = $parts[3] ?? null;
+
+        $gateway = new VideosGateway($database);
+
+        $controller = new VideosController($gateway, $auth);
+        $controller->processRequest($_SERVER["REQUEST_METHOD"], $id);
+        break;
+
 
     default:
         http_response_code(404);

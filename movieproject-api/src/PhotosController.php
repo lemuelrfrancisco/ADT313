@@ -75,7 +75,7 @@ class PhotosController
                     $temp = explode(".", $_FILES["image"]["name"]);
                     $new_profile_path = $temp[0].round(microtime(true)) . '.' . end($temp);
 
-                    $upload_path = "uploads/photos";
+                    $upload_path = "uploads/photos/";
                     $file_ext = strtolower(pathinfo($profile_path, PATHINFO_EXTENSION));
 
                     $valid_extensions = array("jpeg", "jpg", "png", "gif");
@@ -132,15 +132,15 @@ class PhotosController
        
                 $errors = $this->getValidationErrors($data, true, $type  );
 
-                //file upload for cast image
-                if (!empty($_FILES['photoPath']['name']) && $type == 'form') {
-                    $profile_path = $_FILES['photoPath']['name'];
-                    $temp_path = $_FILES['photoPath']['tmp_name'];
-                    $file_size = $_FILES['photoPath']['size'];
-                    $temp = explode(".", $_FILES["photoPath"]["name"]);
+                //file upload for image
+                if (!empty($_FILES['image']['name']) && $type == 'form') {
+                    $profile_path = $_FILES['image']['name'];
+                    $temp_path = $_FILES['image']['tmp_name'];
+                    $file_size = $_FILES['image']['size'];
+                    $temp = explode(".", $_FILES["image"]["name"]);
                     $new_profile_path = $temp[0].round(microtime(true)) . '.' . end($temp);
 
-                    $upload_path = "uploads/photos";
+                    $upload_path = "uploads/photos/";
                     $file_ext = strtolower(pathinfo($profile_path, PATHINFO_EXTENSION));
 
                     $valid_extensions = array("jpeg", "jpg", "png", "gif");
@@ -168,6 +168,7 @@ class PhotosController
                     break;
                 }
                 $data['userId'] = $this->auth->getUserID();
+                
                 $id = $this->gateway->create($data);
 
                 http_response_code(201);
@@ -190,9 +191,9 @@ class PhotosController
             $errors[] = "Movie ID is required.";
         }
 
-        if ($is_new && empty($data["url"])) {
-            $errors[] = "Photo URL is required.";
-        }
+        // if ($is_new && empty($data["url"])) {
+        //     $errors[] = "Photo URL is required.";
+        // }
 
         return $errors;
     }

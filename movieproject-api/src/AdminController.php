@@ -1,7 +1,7 @@
 <?php
-class UserController
+class AdminController
 {
-    public function __construct(private UserGateway $gateway)
+    public function __construct(private AdminGateway $gateway)
     {
     }
 

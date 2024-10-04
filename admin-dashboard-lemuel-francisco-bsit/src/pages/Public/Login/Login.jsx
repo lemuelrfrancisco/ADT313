@@ -47,7 +47,7 @@ function Login() {
 
     await axios({
       method: 'post',
-      url: '/user/login',
+      url: '/admin/login',
       data,
       headers: { 'Access-Control-Allow-Origin': '*' },
     })

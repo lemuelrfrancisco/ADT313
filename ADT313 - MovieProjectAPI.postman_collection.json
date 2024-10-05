@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "911acd1a-5699-4ca1-b39b-fae23633ceb4",
+		"name": "ADT313 - MovieProjectAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7549557"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n  \"email\":\"test@mail.com\", \n  \"password\":\"password\",\n  \"firstName\":\"string\",\n  \"middleName\":\"string\",\n  \"lastName\":\"string\",\n  \"contactNo\":\"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/movieproject-api/user/register",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"movieproject-api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"test@mail.com\",\n  \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/movieproject-api/user/login",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"movieproject-api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Create using JSON",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBtYWlsLmNvbSIsImZpcnN0TmFtZSI6InN0cmluZyIsIm1pZGRsZU5hbWUiOiJzdHJpbmciLCJsYXN0TmFtZSI6InN0cmluZyIsImNvbnRhY3RObyI6InN0cmluZyIsInJvbGUiOiJ1c2VyIn0.A5_7mar20IU3bNBxnBAO2iV9hxvLjJQFrhwNCH1gBZo\"",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tmdbId\": 310,\n  \"title\": \"Bruce Almighty\",\n  \"overview\": \"Bruce Nolan toils as a \\\"human interest\\\" television reporter in Buffalo, NY, but despite his high ratings and the love of his beautiful girlfriend, Bruce remains unfulfilled. At the end of the worst day in his life, he angrily ridicules God - and the Almighty responds, endowing Bruce with all of His divine powers.\",\n  \"popularity\": 57.52,\n  \"releaseDate\":\"2003-05-23\",\n  \"voteAverage\": 6.715,\n  \"backdropPath\": \"https://image.tmdb.org/t/p/original/gdGIwCH9OS2w2USTKUlcTppXfXz.jpg\",\n  \"posterPath\": \"https://image.tmdb.org/t/p/original/3XJKBKh9Km89EoUEitVTSnrlAkZ.jpg\",\n  \"isFeatured\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/movieproject-api/movies",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"movieproject-api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch using JSON",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBtYWlsLmNvbSIsImZpcnN0TmFtZSI6InN0cmluZyIsIm1pZGRsZU5hbWUiOiJzdHJpbmciLCJsYXN0TmFtZSI6InN0cmluZyIsImNvbnRhY3RObyI6InN0cmluZyIsInJvbGUiOiJ1c2VyIn0.A5_7mar20IU3bNBxnBAO2iV9hxvLjJQFrhwNCH1gBZo\"",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tmdbId\": 310,\n  \"title\": \"Bruce Almighty\",\n  \"overview\": \"Bruce Nolan toils as a \\\"human interest\\\" television reporter in Buffalo, NY, but despite his high ratings and the love of his beautiful girlfriend, Bruce remains unfulfilled. At the end of the worst day in his life, he angrily ridicules God - and the Almighty responds, endowing Bruce with all of His divine powers.\",\n  \"popularity\": 57.52,\n  \"releaseDate\":\"2003-05-23\",\n  \"voteAverage\": 6.715,\n  \"backdropPath\": \"https://image.tmdb.org/t/p/original//gdGIwCH9OS2w2USTKUlcTppXfXz.jpg\",\n  \"posterPath\": \"https://image.tmdb.org/t/p/original//3XJKBKh9Km89EoUEitVTSnrlAkZ.jpg\",\n  \"isFeatured\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/movieproject-api/movies/0",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"movieproject-api",
+								"movies",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update using POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBtYWlsLmNvbSIsImZpcnN0TmFtZSI6InN0cmluZyIsIm1pZGRsZU5hbWUiOiJzdHJpbmciLCJsYXN0TmFtZSI6InN0cmluZyIsImNvbnRhY3RObyI6InN0cmluZyIsInJvbGUiOiJ1c2VyIn0.A5_7mar20IU3bNBxnBAO2iV9hxvLjJQFrhwNCH1gBZo\"",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tmdbId",
+									"value": "310",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Bruce Almightyx",
+									"type": "text"
+								},
+								{
+									"key": "overview",
+									"value": "\"Bruce Nolan toils as a \"human interest\" television reporter in Buffalo, NY, but despite his high ratings and the love of his beautiful girlfriend, Bruce remains unfulfilled. At the end of the worst day in his life, he angrily ridicules God - and the Almighty responds, endowing Bruce with all of His divine powers.",
+									"type": "text"
+								},
+								{
+									"key": "popularity",
+									"value": "57.52",
+									"type": "text"
+								},
+								{
+									"key": "releaseDate",
+									"value": "2003-05-23",
+									"type": "text"
+								},
+								{
+									"key": "voteAverage",
+									"value": "6.715",
+									"type": "text"
+								},
+								{
+									"key": "isFeatured",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "backdropPath",
+									"type": "file",
+									"src": "/Users/clouduser/Downloads/backdrop.jpg"
+								},
+								{
+									"key": "posterPath",
+									"type": "file",
+									"src": "/Users/clouduser/Downloads/poster.jpg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/movieproject-api/movies/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"movieproject-api",
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Path using Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBtYWlsLmNvbSIsImZpcnN0TmFtZSI6InN0cmluZyIsIm1pZGRsZU5hbWUiOiJzdHJpbmciLCJsYXN0TmFtZSI6InN0cmluZyIsImNvbnRhY3RObyI6InN0cmluZyIsInJvbGUiOiJ1c2VyIn0.A5_7mar20IU3bNBxnBAO2iV9hxvLjJQFrhwNCH1gBZo\"",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tmdbId",
+									"value": "310",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Bruce Almighty",
+									"type": "text"
+								},
+								{
+									"key": "overview",
+									"value": "\"Bruce Nolan toils as a \"human interest\" television reporter in Buffalo, NY, but despite his high ratings and the love of his beautiful girlfriend, Bruce remains unfulfilled. At the end of the worst day in his life, he angrily ridicules God - and the Almighty responds, endowing Bruce with all of His divine powers.",
+									"type": "text"
+								},
+								{
+									"key": "popularity",
+									"value": "57.52",
+									"type": "text"
+								},
+								{
+									"key": "releaseDate",
+									"value": "2003-05-23",
+									"type": "text"
+								},
+								{
+									"key": "voteAverage",
+									"value": "6.715",
+									"type": "text"
+								},
+								{
+									"key": "isFeatured",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "backdropPath",
+									"type": "file",
+									"src": "/Users/clouduser/Downloads/backdrop.jpg"
+								},
+								{
+									"key": "posterPath",
+									"type": "file",
+									"src": "/Users/clouduser/Downloads/poster.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/movieproject-api/movies",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"movieproject-api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/movieproject-api/movies",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"movieproject-api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movie by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/movieproject-api/movies/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"movieproject-api",
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Photos",
+			"item": [
+				{
+					"name": "Get photo by ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create photo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGVzdEBtYWlsLmNvbSIsImZpcnN0TmFtZSI6InN0cmluZyIsIm1pZGRsZU5hbWUiOiJzdHJpbmciLCJsYXN0TmFtZSI6InN0cmluZyIsImNvbnRhY3RObyI6InN0cmluZyIsInJvbGUiOiJ1c2VyIn0.D-Q2rYdQe9UWDu1HWAg_i1Hg48J-tyglpXZgiAQYTl0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "movieId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/clouduser/Downloads/poster.jpg"
+								},
+								{
+									"key": "description",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/movieproject-api/photos",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"movieproject-api",
+								"photos"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "movieId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "url",
+									"value": "https://image.tmdb.org/t/p/original/2u7zbn8EudG6kLlBzUYqP8RyFU4.jpg",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Test description",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create photo JSON",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGVzdEBtYWlsLmNvbSIsImZpcnN0TmFtZSI6InN0cmluZyIsIm1pZGRsZU5hbWUiOiJzdHJpbmciLCJsYXN0TmFtZSI6InN0cmluZyIsImNvbnRhY3RObyI6InN0cmluZyIsInJvbGUiOiJ1c2VyIn0.D-Q2rYdQe9UWDu1HWAg_i1Hg48J-tyglpXZgiAQYTl0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1,\n    \"movieId\": 1,\n    \"url\":\"https://image.tmdb.org/t/p/original/2u7zbn8EudG6kLlBzUYqP8RyFU4.jpg\",\n    \"description\":\"Test Description\"\n}"
+						},
+						"url": {
+							"raw": "localhost/movieproject-api/movies/photos",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"movieproject-api",
+								"movies",
+								"photos"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "movieId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "url",
+									"value": "https://image.tmdb.org/t/p/original/2u7zbn8EudG6kLlBzUYqP8RyFU4.jpg",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Test description",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

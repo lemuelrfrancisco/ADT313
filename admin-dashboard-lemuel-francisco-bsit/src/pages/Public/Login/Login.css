@@ -28,6 +28,9 @@
   margin-right: 8px;
   text-align: left;
 }
+.login.errors {
+  margin-bottom: 1rem;
+}
 .errors {
   color: red;
   font-size: 12px;

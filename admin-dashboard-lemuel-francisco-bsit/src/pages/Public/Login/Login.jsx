@@ -14,7 +14,7 @@ function Login() {
   const userInputDebounce = useDebounce({ email, password }, 2000);
   const [debounceState, setDebounceState] = useState(false);
   const [status, setStatus] = useState('idle');
-
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleShowPassword = useCallback(() => {
@@ -43,7 +43,6 @@ function Login() {
   const handleLogin = async () => {
     const data = { email, password };
     setStatus('loading');
-    console.log(data);
 
     await axios({
       method: 'post',
@@ -53,11 +52,13 @@ function Login() {
     })
       .then((res) => {
         console.log(res);
+        //store response access token to localstorage
         localStorage.setItem('accessToken', res.data.access_token);
-        navigate('/main/dashboard');
+        navigate('/main/movies');
         setStatus('idle');
       })
       .catch((e) => {
+        setError(e.response.data.message);
         console.log(e);
         setStatus('idle');
         // alert(e.response.data.message);
@@ -71,9 +72,11 @@ function Login() {
   return (
     <div className='Login'>
       <div className='main-container'>
-        <h3>Login</h3>
         <form>
           <div className='form-container'>
+            <h3>Login</h3>
+
+            {error && <span className='login errors'>{error}</span>}
             <div>
               <div className='form-group'>
                 <label>E-mail:</label>
@@ -115,10 +118,7 @@ function Login() {
                     return;
                   }
                   if (email && password) {
-                    handleLogin({
-                      type: 'login',
-                      user: { email, password },
-                    });
+                    handleLogin();
                   } else {
                     setIsFieldsDirty(true);
                     if (email == '') {

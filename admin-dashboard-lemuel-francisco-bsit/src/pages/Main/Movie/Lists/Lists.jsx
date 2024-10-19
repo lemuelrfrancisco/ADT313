@@ -35,15 +35,15 @@ const Lists = () => {
             </tr>
           </thead>
           <tbody>
-            {lists.map((movie, index) => (
+            {lists.map((movie) => (
               <tr>
-                <td>{index}</td>
+                <td>{movie.id}</td>
                 <td>{movie.title}</td>
                 <td>
                   <button
                     type='button'
                     onClick={() => {
-                      navigate('/main/movies/form/' + index);
+                      navigate('/main/movies/form/' + movie.id);
                     }}
                   >
                     Edit

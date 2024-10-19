@@ -1,11 +1,12 @@
 import axios from 'axios';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Form.css';
 const Form = () => {
   const [query, setQuery] = useState('');
   const [searchedMovieList, setSearchedMovieList] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(undefined);
+  const [movie, setMovie] = useState(undefined);
   let { movieId } = useParams();
 
   const handleSearch = useCallback(() => {
@@ -62,25 +63,52 @@ const Form = () => {
     }
   };
 
+  //create a form change/validation
+  //create a new handler for update
+  useEffect(() => {
+    axios.get(`/movies/${movieId}`).then((response) => {
+      setMovie(response.data);
+      const tempData = {
+        id: response.data.tmdbId,
+        original_title: response.data.title,
+        overview: response.data.overview,
+        popularity: response.data.popularity,
+        poster_path: response.data.posterPath,
+        release_date: response.data.releaseDate,
+        vote_average: response.data.voteAverage,
+      };
+      setSelectedMovie(tempData);
+      console.log(response.data);
+    });
+  }, []);
+
   return (
     <>
       <h1>{movieId !== undefined ? 'Edit ' : 'Create '} Movie</h1>
-      <h2>{movieId}</h2>
-      <div className='search-container'>
-        Search Movie:{' '}
-        <input type='text' onChange={(event) => setQuery(event.target.value)} />
-        <button type='button' onClick={handleSearch}>
-          Search
-        </button>
-        <div className='searched-movie'>
-          {searchedMovieList.map((movie) => (
-            <p onClick={() => handleSelectMovie(movie)}>
-              {movie.original_title}
-            </p>
-          ))}
-        </div>
-      </div>
-      <hr />
+
+      {movieId === undefined && (
+        <>
+          <div className='search-container'>
+            Search Movie:{' '}
+            <input
+              type='text'
+              onChange={(event) => setQuery(event.target.value)}
+            />
+            <button type='button' onClick={handleSearch}>
+              Search
+            </button>
+            <div className='searched-movie'>
+              {searchedMovieList.map((movie) => (
+                <p onClick={() => handleSelectMovie(movie)}>
+                  {movie.original_title}
+                </p>
+              ))}
+            </div>
+          </div>
+          <hr />
+        </>
+      )}
+
       <div className='container'>
         <form>
           {selectedMovie ? (

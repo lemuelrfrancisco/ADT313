@@ -10,6 +10,7 @@
 .Main .container .outlet {
   flex-grow: 3;
   padding: 1rem;
+  overflow-y: auto;
 }
 .Main .container .navigation {
   background-color: aliceblue;

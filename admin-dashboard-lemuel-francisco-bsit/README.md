@@ -1,4 +1,4 @@
-# Midterms coverage
+# Midterms coverage (checking is on finals)
 
     ### 1. Login Page
     ### 2. Register Page
@@ -8,6 +8,7 @@
 # Semi-finals & Finals coverage
 
     ### 1. Admin Dashboard with design
+        Login, Register, Movie, Artist, photos and videos (artist, photos, videos should be linked to movie)
     ### 2. Client Site with design
 
 # Getting Started with Create React App

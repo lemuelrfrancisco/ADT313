@@ -1,7 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 import './Lists.css';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 const Lists = () => {
   const navigate = useNavigate();
+  const [lists, setLists] = useState([]);
+
+  useEffect(() => {
+    //get the movies from the api or database
+    axios.get('/movies').then((response) => {
+      setLists(response.data);
+    });
+  }, []);
+
   return (
     <div className='lists-container'>
       <div className='create-container'>
@@ -24,21 +35,23 @@ const Lists = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Sample Movie</td>
-              <td>
-                <button
-                  type='button'
-                  onClick={() => {
-                    navigate('/main/movies/form/1');
-                  }}
-                >
-                  Edit
-                </button>
-                <button type='button'>Delete</button>
-              </td>
-            </tr>
+            {lists.map((movie, index) => (
+              <tr>
+                <td>{index}</td>
+                <td>{movie.title}</td>
+                <td>
+                  <button
+                    type='button'
+                    onClick={() => {
+                      navigate('/main/movies/form/' + index);
+                    }}
+                  >
+                    Edit
+                  </button>
+                  <button type='button'>Delete</button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

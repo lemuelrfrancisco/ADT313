@@ -1,3 +1,15 @@
+# Midterms coverage
+
+    ### 1. Login Page
+    ### 2. Register Page
+    ### 3. Create Movie with search to TMDB
+    ### 4. Update Movie with field validation
+
+# Semi-finals & Finals coverage
+
+    ### 1. Admin Dashboard with design
+    ### 2. Client Site with design
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

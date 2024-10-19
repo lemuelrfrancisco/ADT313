@@ -339,6 +339,35 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete Movie by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGVzdEBtYWlsLmNvbSIsImZpcnN0TmFtZSI6InN0cmluZyIsIm1pZGRsZU5hbWUiOiJzdHJpbmciLCJsYXN0TmFtZSI6InN0cmluZyIsImNvbnRhY3RObyI6InN0cmluZyIsInJvbGUiOiJhZG1pbiJ9.w1z_-Gw1T92s9KmHH41lO493wYY1Mfts8doXn8cqSaM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost/movieproject-api/movies/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"movieproject-api",
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},

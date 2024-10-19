@@ -1,0 +1,289 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "PHP Rest API",
+  "dateExported": "2023-02-22T10:05:12.010Z",
+  "version": "1.1",
+  "folders": [
+    {
+      "_id": "227e2ae4-33eb-4a65-ad95-fa7757c9964e",
+      "name": "Products",
+      "containerId": "",
+      "created": "2023-02-22T09:09:04.230Z",
+      "sortNum": 10000
+    },
+    {
+      "_id": "70d6d712-3e52-4619-b981-11072f038a17",
+      "name": "Reviews",
+      "containerId": "",
+      "created": "2023-02-22T09:09:23.502Z",
+      "sortNum": 20000
+    },
+    {
+      "_id": "bbb80bd3-18f7-4418-b7a9-e65cebd1f19b",
+      "name": "User",
+      "containerId": "",
+      "created": "2023-02-22T09:12:33.158Z",
+      "sortNum": 30000
+    }
+  ],
+  "requests": [
+    {
+      "_id": "9d491138-29e4-4ed0-86bf-df705490dad8",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "227e2ae4-33eb-4a65-ad95-fa7757c9964e",
+      "name": "Get all products",
+      "url": "localhost/php-rest-api-git/products",
+      "method": "GET",
+      "sortNum": 10000,
+      "created": "2023-02-22T09:06:32.411Z",
+      "modified": "2023-02-22T09:09:07.619Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "8896a3ac-8632-4a42-9320-8bff28bf6432",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "227e2ae4-33eb-4a65-ad95-fa7757c9964e",
+      "name": "Create new product - new",
+      "url": "localhost/php-rest-api/products",
+      "method": "POST",
+      "sortNum": 20000,
+      "created": "2023-02-22T09:07:14.921Z",
+      "modified": "2023-02-22T09:52:31.140Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkZpcnN0IG5hbWUiLCJtaWRkbGVOYW1lIjoiTWlkZGxlIG5hbWUiLCJsYXN0TmFtZSI6Ikxhc3QgTmFtZSIsImNvbnRhY3RObyI6IjA5ODc2NTQzMjEifQ.a-1uXXovNNCD6d3kUbJznETv4C8U8p7BZ1eGMVZ7dxU"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "formdata",
+        "raw": "",
+        "form": [
+          {
+            "name": "name",
+            "value": "Test product"
+          },
+          {
+            "name": "size",
+            "value": "100"
+          },
+          {
+            "name": "is_available",
+            "value": "1"
+          },
+          {
+            "name": "description",
+            "value": "test description"
+          },
+          {
+            "name": "price",
+            "value": "5"
+          }
+        ],
+        "files": [
+          {
+            "name": "file",
+            "value": "c:\\Users\\lemue\\Desktop\\Desktop\\products\\fries.jpg"
+          }
+        ]
+      },
+      "tests": []
+    },
+    {
+      "_id": "cec10c4d-58e9-430d-a300-622e5e1a823d",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "227e2ae4-33eb-4a65-ad95-fa7757c9964e",
+      "name": "Create new product - old Copy",
+      "url": "localhost/php-rest-api/products",
+      "method": "POST",
+      "sortNum": 25000,
+      "created": "2023-02-22T10:03:03.109Z",
+      "modified": "2023-02-22T10:03:24.698Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkZpcnN0IG5hbWUiLCJtaWRkbGVOYW1lIjoiTWlkZGxlIG5hbWUiLCJsYXN0TmFtZSI6Ikxhc3QgTmFtZSIsImNvbnRhY3RObyI6IjA5ODc2NTQzMjEifQ.a-1uXXovNNCD6d3kUbJznETv4C8U8p7BZ1eGMVZ7dxU"
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "99daaa70-5b0f-4e0e-b590-2833c798b625",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "227e2ae4-33eb-4a65-ad95-fa7757c9964e",
+      "name": "Update product",
+      "url": "localhost/php-rest-api/products",
+      "method": "POST",
+      "sortNum": 30000,
+      "created": "2023-02-22T09:08:09.673Z",
+      "modified": "2023-02-22T09:09:09.351Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{ \"name\":\"Product name\", \"size\": 10, \"is_available\":true}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "31f0fb1f-7060-4a1e-96a8-aafd4f9d009a",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "227e2ae4-33eb-4a65-ad95-fa7757c9964e",
+      "name": "Get Product by ID",
+      "url": "localhost/php-rest-api/products/1",
+      "method": "GET",
+      "sortNum": 40000,
+      "created": "2023-02-22T09:07:52.650Z",
+      "modified": "2023-02-22T09:09:10.132Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "913745fb-8639-4840-869b-ee6e62ae2779",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "227e2ae4-33eb-4a65-ad95-fa7757c9964e",
+      "name": "Delete Product by ID",
+      "url": "localhost/php-rest-api/products/1",
+      "method": "DELETE",
+      "sortNum": 50000,
+      "created": "2023-02-22T09:08:40.122Z",
+      "modified": "2023-02-22T09:12:19.266Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "a7d9e303-cd20-4d9f-89ef-ccc06f7e6ffd",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "70d6d712-3e52-4619-b981-11072f038a17",
+      "name": "Get all Reviews",
+      "url": "localhost/php-rest-api-git/reviews",
+      "method": "GET",
+      "sortNum": 60000,
+      "created": "2023-02-22T09:09:57.841Z",
+      "modified": "2023-02-22T09:09:57.841Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "a8a4ac60-25ad-4b14-970d-808fd9ecc2f7",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "70d6d712-3e52-4619-b981-11072f038a17",
+      "name": "Update Review",
+      "url": "localhost/php-rest-api/reviews/[id]",
+      "method": "PATCH",
+      "sortNum": 65000,
+      "created": "2023-02-22T09:11:14.066Z",
+      "modified": "2023-02-22T09:11:59.071Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "1af079c4-a4ff-4adb-9dcf-87ad3ea45816",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "70d6d712-3e52-4619-b981-11072f038a17",
+      "name": "Get Review by id",
+      "url": "localhost/php-rest-api/reviews/[id]",
+      "method": "GET",
+      "sortNum": 67500,
+      "created": "2023-02-22T09:11:16.684Z",
+      "modified": "2023-02-22T09:11:33.402Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "4b736ba5-7702-4fcf-bf26-35b9a2d0f54c",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "70d6d712-3e52-4619-b981-11072f038a17",
+      "name": "Delete Review by id",
+      "url": "localhost/php-rest-api/reviews/[id]",
+      "method": "DELETE",
+      "sortNum": 68750,
+      "created": "2023-02-22T09:12:03.929Z",
+      "modified": "2023-02-22T09:12:14.084Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "031fd1d1-61a7-4fe7-b66f-ec667a23d512",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "70d6d712-3e52-4619-b981-11072f038a17",
+      "name": "Get Reviews by product id",
+      "url": "localhost/php-rest-api-git/reviews/[id]/products/[productid]",
+      "method": "GET",
+      "sortNum": 70000,
+      "created": "2023-02-22T09:10:01.565Z",
+      "modified": "2023-02-22T09:10:30.761Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "ce5edf19-9b18-4216-bb61-faf2d111dc2d",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "70d6d712-3e52-4619-b981-11072f038a17",
+      "name": "Create new review",
+      "url": "localhost/php-rest-api/reviews",
+      "method": "POST",
+      "sortNum": 80000,
+      "created": "2023-02-22T09:10:34.181Z",
+      "modified": "2023-02-22T09:11:03.210Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{ \"name\":\"string\", \"content\": \"string\", \"is_rate\":10}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "2f3278ae-e224-4bf2-b8b5-0c5846266dfb",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "bbb80bd3-18f7-4418-b7a9-e65cebd1f19b",
+      "name": "Register",
+      "url": "localhost/php-rest-api-git/user/register",
+      "method": "POST",
+      "sortNum": 80000,
+      "created": "2023-02-22T09:12:51.622Z",
+      "modified": "2023-02-22T09:14:05.375Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"string\", \n  \"password\":\"password\",\n  \"firstName\":\"string\",\n  \"middleName\":\"string\",\n  \"lastName\":\"string\",\n  \"contactNo\":\"string\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "8ca1176f-94e6-4cdb-a389-0a1dc40263bf",
+      "colId": "dae9eed5-2c71-41d4-a582-dac338f2a8c4",
+      "containerId": "bbb80bd3-18f7-4418-b7a9-e65cebd1f19b",
+      "name": "Login",
+      "url": "localhost/php-rest-api-git/user/login",
+      "method": "POST",
+      "sortNum": 90000,
+      "created": "2023-02-22T09:13:27.458Z",
+      "modified": "2023-02-22T09:45:18.332Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{ \"email\": \"test@mail.com\", \"password\":\"password\"}\n",
+        "form": []
+      },
+      "tests": []
+    }
+  ]
+}

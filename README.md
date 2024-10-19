@@ -28,3 +28,14 @@
 #### TMDB Search artist/Credits
 
 ##### https://developer.themoviedb.org/reference/movie-credits
+
+# Hands-on activity
+
+    1. using react hooks, get the latest value of form fields
+    and pass it as payload to api.
+    2. Create the update function of movie
+        -use method:PATCH url: /movies/{id}
+    3. implement pagination in search movie using the
+       `total_pages` from tmdb api response
+    4. add error handler for search, save, delete
+    5. redirect to `/main/movies` after saving the movie

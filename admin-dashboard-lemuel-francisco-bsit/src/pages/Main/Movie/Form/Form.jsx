@@ -66,20 +66,22 @@ const Form = () => {
   //create a form change/validation
   //create a new handler for update
   useEffect(() => {
-    axios.get(`/movies/${movieId}`).then((response) => {
-      setMovie(response.data);
-      const tempData = {
-        id: response.data.tmdbId,
-        original_title: response.data.title,
-        overview: response.data.overview,
-        popularity: response.data.popularity,
-        poster_path: response.data.posterPath,
-        release_date: response.data.releaseDate,
-        vote_average: response.data.voteAverage,
-      };
-      setSelectedMovie(tempData);
-      console.log(response.data);
-    });
+    if (movieId) {
+      axios.get(`/movies/${movieId}`).then((response) => {
+        setMovie(response.data);
+        const tempData = {
+          id: response.data.tmdbId,
+          original_title: response.data.title,
+          overview: response.data.overview,
+          popularity: response.data.popularity,
+          poster_path: response.data.posterPath,
+          release_date: response.data.releaseDate,
+          vote_average: response.data.voteAverage,
+        };
+        setSelectedMovie(tempData);
+        console.log(response.data);
+      });
+    }
   }, []);
 
   return (

@@ -13,9 +13,13 @@
     ### 1. Admin Dashboard with design
         Login, Register, Movie, Artist, photos and videos (artist, photos, videos should be linked to movie)
 	    #### [User (access token and information) and movies should be stored using useContext.]
+     	    #### Search Movies using TMDB API
+	    #### Search Videos, Photos and Credits using TMDB API under Admin - Movie page
     ### 2. Client Site with design
 	    #### [User (access token and information) and movies should be stored using useContext.]
     
+# Database Diagram
+ ![image3](https://raw.githubusercontent.com/lemuelrfrancisco/ADT313/main/diagram.png)
 
 #### TMDB Search movie
 

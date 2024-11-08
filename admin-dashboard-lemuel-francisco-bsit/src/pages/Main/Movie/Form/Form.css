@@ -1,0 +1,16 @@
+.searched-movie {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.search-container p:hover {
+  background-color: lightblue;
+}
+
+.poster-image {
+  width: 150px;
+  height: auto;
+}
+
+.container {
+  overflow: auto;
+}

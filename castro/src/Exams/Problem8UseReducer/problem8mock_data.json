@@ -1,0 +1,602 @@
+[
+  {
+    "food_name": "Greens Mustard",
+    "price": 34.21,
+    "expiration_date": "6/7/2023",
+    "calories": 169
+  },
+  {
+    "food_name": "Wine - Charddonnay Errazuriz",
+    "price": 28.03,
+    "expiration_date": "3/20/2022",
+    "calories": 861
+  },
+  {
+    "food_name": "Lettuce - Escarole",
+    "price": 16.94,
+    "expiration_date": "11/7/2022",
+    "calories": 476
+  },
+  {
+    "food_name": "Longos - Chicken Cordon Bleu",
+    "price": 23.5,
+    "expiration_date": "6/22/2023",
+    "calories": 89
+  },
+  {
+    "food_name": "Marsala - Sperone, Fine, D.o.c.",
+    "price": 43.68,
+    "expiration_date": "7/2/2022",
+    "calories": 533
+  },
+  {
+    "food_name": "Pork - Bones",
+    "price": 15.01,
+    "expiration_date": "9/7/2023",
+    "calories": 143
+  },
+  {
+    "food_name": "Cocoa Powder - Natural",
+    "price": 33.86,
+    "expiration_date": "1/20/2023",
+    "calories": 596
+  },
+  {
+    "food_name": "Halibut - Steaks",
+    "price": 3.85,
+    "expiration_date": "12/30/2023",
+    "calories": 593
+  },
+  {
+    "food_name": "Beer - Camerons Auburn",
+    "price": 15.07,
+    "expiration_date": "3/12/2022",
+    "calories": 994
+  },
+  {
+    "food_name": "Smoked Paprika",
+    "price": 40.56,
+    "expiration_date": "6/2/2022",
+    "calories": 877
+  },
+  {
+    "food_name": "Carrots - Jumbo",
+    "price": 4.47,
+    "expiration_date": "7/15/2022",
+    "calories": 122
+  },
+  {
+    "food_name": "Cheese - Augre Des Champs",
+    "price": 42.4,
+    "expiration_date": "5/15/2022",
+    "calories": 743
+  },
+  {
+    "food_name": "Sauce - Hollandaise",
+    "price": 30.11,
+    "expiration_date": "10/29/2022",
+    "calories": 102
+  },
+  {
+    "food_name": "Wine - Red, Mouton Cadet",
+    "price": 35.49,
+    "expiration_date": "8/21/2022",
+    "calories": 850
+  },
+  {
+    "food_name": "Wine - Saint Emilion Calvet",
+    "price": 40.6,
+    "expiration_date": "10/18/2022",
+    "calories": 885
+  },
+  {
+    "food_name": "Lettuce - Lolla Rosa",
+    "price": 22.99,
+    "expiration_date": "9/24/2022",
+    "calories": 339
+  },
+  {
+    "food_name": "Broom And Brush Rack Black",
+    "price": 19.83,
+    "expiration_date": "4/6/2023",
+    "calories": 978
+  },
+  {
+    "food_name": "Cake Sheet Combo Party Pack",
+    "price": 9.57,
+    "expiration_date": "7/8/2022",
+    "calories": 197
+  },
+  {
+    "food_name": "Jello - Assorted",
+    "price": 15.33,
+    "expiration_date": "1/11/2022",
+    "calories": 197
+  },
+  {
+    "food_name": "Towel Dispenser",
+    "price": 49.28,
+    "expiration_date": "1/1/2023",
+    "calories": 949
+  },
+  {
+    "food_name": "Pepper Squash",
+    "price": 15.55,
+    "expiration_date": "2/18/2022",
+    "calories": 519
+  },
+  {
+    "food_name": "Olives - Morracan Dired",
+    "price": 19.48,
+    "expiration_date": "7/29/2022",
+    "calories": 532
+  },
+  {
+    "food_name": "Vermacelli - Sprinkles, Assorted",
+    "price": 43.5,
+    "expiration_date": "5/1/2023",
+    "calories": 723
+  },
+  {
+    "food_name": "Wine - Marlbourough Sauv Blanc",
+    "price": 27.45,
+    "expiration_date": "8/2/2022",
+    "calories": 998
+  },
+  {
+    "food_name": "Ecolab - Balanced Fusion",
+    "price": 48.67,
+    "expiration_date": "7/27/2022",
+    "calories": 365
+  },
+  {
+    "food_name": "Sea Bass - Whole",
+    "price": 31.48,
+    "expiration_date": "11/29/2023",
+    "calories": 976
+  },
+  {
+    "food_name": "Lobak",
+    "price": 37.32,
+    "expiration_date": "5/28/2022",
+    "calories": 175
+  },
+  {
+    "food_name": "Sugar - Individual Portions",
+    "price": 21.34,
+    "expiration_date": "5/16/2022",
+    "calories": 625
+  },
+  {
+    "food_name": "Beef - Tongue, Fresh",
+    "price": 36.43,
+    "expiration_date": "5/19/2022",
+    "calories": 493
+  },
+  {
+    "food_name": "Cheese - Camembert",
+    "price": 42.41,
+    "expiration_date": "5/13/2022",
+    "calories": 173
+  },
+  {
+    "food_name": "Salami - Genova",
+    "price": 4.43,
+    "expiration_date": "10/1/2022",
+    "calories": 430
+  },
+  {
+    "food_name": "Currants",
+    "price": 49.27,
+    "expiration_date": "4/23/2023",
+    "calories": 281
+  },
+  {
+    "food_name": "Wine - White, Lindemans Bin 95",
+    "price": 43.51,
+    "expiration_date": "7/4/2023",
+    "calories": 567
+  },
+  {
+    "food_name": "Oregano - Fresh",
+    "price": 10.88,
+    "expiration_date": "6/21/2022",
+    "calories": 252
+  },
+  {
+    "food_name": "Kippers - Smoked",
+    "price": 14.27,
+    "expiration_date": "8/7/2023",
+    "calories": 30
+  },
+  {
+    "food_name": "Soup - Chicken And Wild Rice",
+    "price": 43.62,
+    "expiration_date": "4/15/2022",
+    "calories": 525
+  },
+  {
+    "food_name": "Wine - Cousino Macul Antiguas",
+    "price": 30.54,
+    "expiration_date": "5/6/2023",
+    "calories": 915
+  },
+  {
+    "food_name": "Chips - Potato Jalapeno",
+    "price": 46.83,
+    "expiration_date": "11/13/2023",
+    "calories": 299
+  },
+  {
+    "food_name": "Tomatoes - Cherry",
+    "price": 6.45,
+    "expiration_date": "9/8/2023",
+    "calories": 663
+  },
+  {
+    "food_name": "Mushroom Morel Fresh",
+    "price": 43.85,
+    "expiration_date": "4/8/2022",
+    "calories": 961
+  },
+  {
+    "food_name": "Cheese - Pont Couvert",
+    "price": 17.16,
+    "expiration_date": "4/27/2023",
+    "calories": 987
+  },
+  {
+    "food_name": "Celery",
+    "price": 37.07,
+    "expiration_date": "7/2/2022",
+    "calories": 168
+  },
+  {
+    "food_name": "Filo Dough",
+    "price": 33.78,
+    "expiration_date": "5/13/2023",
+    "calories": 863
+  },
+  {
+    "food_name": "Irish Cream - Butterscotch",
+    "price": 37.1,
+    "expiration_date": "3/1/2022",
+    "calories": 797
+  },
+  {
+    "food_name": "Cup Translucent 9 Oz",
+    "price": 30.54,
+    "expiration_date": "9/23/2023",
+    "calories": 29
+  },
+  {
+    "food_name": "Olive - Spread Tapenade",
+    "price": 1.56,
+    "expiration_date": "1/27/2022",
+    "calories": 888
+  },
+  {
+    "food_name": "Oil - Olive",
+    "price": 15.43,
+    "expiration_date": "3/28/2023",
+    "calories": 225
+  },
+  {
+    "food_name": "Bread - Corn Muffaleta Onion",
+    "price": 24.36,
+    "expiration_date": "7/4/2022",
+    "calories": 910
+  },
+  {
+    "food_name": "Oregano - Fresh",
+    "price": 42.72,
+    "expiration_date": "5/14/2023",
+    "calories": 150
+  },
+  {
+    "food_name": "Bread - Granary Small Pull",
+    "price": 42.15,
+    "expiration_date": "7/15/2022",
+    "calories": 106
+  },
+  {
+    "food_name": "Wine - Red, Cooking",
+    "price": 2.24,
+    "expiration_date": "7/29/2022",
+    "calories": 455
+  },
+  {
+    "food_name": "Potatoes - Parissienne",
+    "price": 48.28,
+    "expiration_date": "4/21/2023",
+    "calories": 862
+  },
+  {
+    "food_name": "Pasta - Linguini, Dry",
+    "price": 12.92,
+    "expiration_date": "4/10/2023",
+    "calories": 48
+  },
+  {
+    "food_name": "Veal - Striploin",
+    "price": 13.53,
+    "expiration_date": "12/9/2022",
+    "calories": 202
+  },
+  {
+    "food_name": "Tobasco Sauce",
+    "price": 11.27,
+    "expiration_date": "5/9/2023",
+    "calories": 634
+  },
+  {
+    "food_name": "Strawberries - California",
+    "price": 40.72,
+    "expiration_date": "8/1/2022",
+    "calories": 775
+  },
+  {
+    "food_name": "Cucumber - English",
+    "price": 42.28,
+    "expiration_date": "6/9/2023",
+    "calories": 969
+  },
+  {
+    "food_name": "Rice - Basmati",
+    "price": 34.44,
+    "expiration_date": "5/25/2022",
+    "calories": 1000
+  },
+  {
+    "food_name": "Dried Cherries",
+    "price": 31.13,
+    "expiration_date": "3/23/2023",
+    "calories": 340
+  },
+  {
+    "food_name": "Flower - Commercial Spider",
+    "price": 9.64,
+    "expiration_date": "6/17/2022",
+    "calories": 896
+  },
+  {
+    "food_name": "Sour Cream",
+    "price": 28.31,
+    "expiration_date": "7/18/2022",
+    "calories": 907
+  },
+  {
+    "food_name": "Pork Salted Bellies",
+    "price": 10.31,
+    "expiration_date": "2/3/2023",
+    "calories": 531
+  },
+  {
+    "food_name": "Quail - Jumbo Boneless",
+    "price": 17.63,
+    "expiration_date": "9/1/2023",
+    "calories": 927
+  },
+  {
+    "food_name": "Carbonated Water - Strawberry",
+    "price": 14.91,
+    "expiration_date": "10/21/2022",
+    "calories": 254
+  },
+  {
+    "food_name": "Coffee - Decafenated",
+    "price": 43.48,
+    "expiration_date": "11/18/2023",
+    "calories": 158
+  },
+  {
+    "food_name": "Plasticknivesblack",
+    "price": 16.88,
+    "expiration_date": "6/21/2022",
+    "calories": 530
+  },
+  {
+    "food_name": "Wine - Niagara Peninsula Vqa",
+    "price": 7.16,
+    "expiration_date": "6/10/2023",
+    "calories": 597
+  },
+  {
+    "food_name": "Soup - Campbells Beef Strogonoff",
+    "price": 47.74,
+    "expiration_date": "4/10/2022",
+    "calories": 866
+  },
+  {
+    "food_name": "Rice Wine - Aji Mirin",
+    "price": 13.3,
+    "expiration_date": "12/14/2023",
+    "calories": 696
+  },
+  {
+    "food_name": "Water - San Pellegrino",
+    "price": 27.89,
+    "expiration_date": "12/11/2022",
+    "calories": 114
+  },
+  {
+    "food_name": "Wine - Pinot Noir Pond Haddock",
+    "price": 5.51,
+    "expiration_date": "5/17/2023",
+    "calories": 6
+  },
+  {
+    "food_name": "Dill Weed - Dry",
+    "price": 6.33,
+    "expiration_date": "6/10/2022",
+    "calories": 868
+  },
+  {
+    "food_name": "Potatoes - Yukon Gold 5 Oz",
+    "price": 39.94,
+    "expiration_date": "1/1/2023",
+    "calories": 676
+  },
+  {
+    "food_name": "Chocolate Bar - Reese Pieces",
+    "price": 20.19,
+    "expiration_date": "9/5/2023",
+    "calories": 327
+  },
+  {
+    "food_name": "Cheese - Feta",
+    "price": 37.34,
+    "expiration_date": "2/25/2023",
+    "calories": 957
+  },
+  {
+    "food_name": "Veal - Kidney",
+    "price": 27.14,
+    "expiration_date": "2/1/2023",
+    "calories": 319
+  },
+  {
+    "food_name": "Devonshire Cream",
+    "price": 31.41,
+    "expiration_date": "10/30/2023",
+    "calories": 498
+  },
+  {
+    "food_name": "Lobster - Tail, 3 - 4 Oz",
+    "price": 8.28,
+    "expiration_date": "5/24/2023",
+    "calories": 360
+  },
+  {
+    "food_name": "Chivas Regal - 12 Year Old",
+    "price": 38.43,
+    "expiration_date": "7/14/2023",
+    "calories": 695
+  },
+  {
+    "food_name": "Beef - Kindney, Whole",
+    "price": 2.94,
+    "expiration_date": "3/31/2023",
+    "calories": 760
+  },
+  {
+    "food_name": "Apricots - Halves",
+    "price": 26.18,
+    "expiration_date": "9/12/2022",
+    "calories": 796
+  },
+  {
+    "food_name": "Flour - Strong Pizza",
+    "price": 28.16,
+    "expiration_date": "8/9/2022",
+    "calories": 89
+  },
+  {
+    "food_name": "Wine - White, Chardonnay",
+    "price": 6.8,
+    "expiration_date": "8/16/2022",
+    "calories": 763
+  },
+  {
+    "food_name": "Wine - Rosso Del Veronese Igt",
+    "price": 31.32,
+    "expiration_date": "9/3/2023",
+    "calories": 690
+  },
+  {
+    "food_name": "Chef Hat 20cm",
+    "price": 43.29,
+    "expiration_date": "3/7/2022",
+    "calories": 662
+  },
+  {
+    "food_name": "Wonton Wrappers",
+    "price": 25.96,
+    "expiration_date": "9/17/2023",
+    "calories": 366
+  },
+  {
+    "food_name": "Red Currant Jelly",
+    "price": 37.04,
+    "expiration_date": "10/21/2023",
+    "calories": 261
+  },
+  {
+    "food_name": "Apricots Fresh",
+    "price": 17.57,
+    "expiration_date": "3/24/2023",
+    "calories": 584
+  },
+  {
+    "food_name": "Eel Fresh",
+    "price": 10.05,
+    "expiration_date": "3/26/2022",
+    "calories": 943
+  },
+  {
+    "food_name": "Coffee Swiss Choc Almond",
+    "price": 48.74,
+    "expiration_date": "4/18/2023",
+    "calories": 632
+  },
+  {
+    "food_name": "Bonito Flakes - Toku Katsuo",
+    "price": 13.45,
+    "expiration_date": "8/10/2023",
+    "calories": 689
+  },
+  {
+    "food_name": "Appetizer - Southwestern",
+    "price": 46.99,
+    "expiration_date": "6/8/2023",
+    "calories": 649
+  },
+  {
+    "food_name": "Longos - Grilled Veg Sandwiches",
+    "price": 9.69,
+    "expiration_date": "11/20/2023",
+    "calories": 109
+  },
+  {
+    "food_name": "Lettuce - Spring Mix",
+    "price": 37.7,
+    "expiration_date": "3/11/2023",
+    "calories": 255
+  },
+  {
+    "food_name": "Squash - Pattypan, Yellow",
+    "price": 34.38,
+    "expiration_date": "9/1/2023",
+    "calories": 805
+  },
+  {
+    "food_name": "Skewers - Bamboo",
+    "price": 39.33,
+    "expiration_date": "8/15/2023",
+    "calories": 763
+  },
+  {
+    "food_name": "General Purpose Trigger",
+    "price": 26.39,
+    "expiration_date": "9/2/2022",
+    "calories": 641
+  },
+  {
+    "food_name": "Muffin Mix - Corn Harvest",
+    "price": 19.31,
+    "expiration_date": "7/14/2023",
+    "calories": 702
+  },
+  {
+    "food_name": "Rum - Mount Gay Eclipes",
+    "price": 32.34,
+    "expiration_date": "2/15/2023",
+    "calories": 546
+  },
+  {
+    "food_name": "Pate - Liver",
+    "price": 47.54,
+    "expiration_date": "10/26/2023",
+    "calories": 190
+  }
+]

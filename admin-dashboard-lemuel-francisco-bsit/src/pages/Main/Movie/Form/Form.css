@@ -14,3 +14,19 @@
 .container {
   overflow: auto;
 }
+
+nav {
+  margin-top: 2rem;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  border: solid;
+  border-width: 1px 1px 0 1px;
+  margin: 0 5px 0 0;
+}

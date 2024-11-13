@@ -34,6 +34,34 @@ const router = createBrowserRouter([
           {
             path: '/main/movies/form/:movieId?',
             element: <Form />,
+            children: [
+              {
+                path: '/main/movies/form/:movieId',
+                element: (
+                  <h1>Change this for cast & crew CRUD functionality.</h1>
+                ),
+              },
+              {
+                path: '/main/movies/form/:movieId/cast-and-crews',
+                element: (
+                  <h1>
+                    Change this for cast & crew CRUD functionality component.
+                  </h1>
+                ),
+              },
+              {
+                path: '/main/movies/form/:movieId/photos',
+                element: (
+                  <h1>Change this for photos CRUD functionality component.</h1>
+                ),
+              },
+              {
+                path: '/main/movies/form/:movieId/videos',
+                element: (
+                  <h1>Change this for videos CRUD functionality component.</h1>
+                ),
+              },
+            ],
           },
         ],
       },

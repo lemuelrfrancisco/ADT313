@@ -11,8 +11,9 @@
 }
 
 .featured-list-container {
-  height: 600px;
+  width: 100%;
   margin-bottom: 5rem;
+  aspect-ratio: 16 / 9;
 }
 .featured-backdrop {
   height: 100%;

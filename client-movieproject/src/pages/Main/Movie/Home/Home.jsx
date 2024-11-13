@@ -32,6 +32,7 @@ const Home = () => {
         setFeaturedMovie(lists[random]);
       }
     }, 5000);
+    return;
   }, [featuredMovie]);
 
   return (

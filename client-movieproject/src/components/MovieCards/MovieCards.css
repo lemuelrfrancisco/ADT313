@@ -1,0 +1,9 @@
+.card {
+  max-width: 180px;
+  border: 20px solid #898989;
+  background-color: #898989;
+}
+.card img {
+  max-width: 180px;
+  object-fit: contain;
+}

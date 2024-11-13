@@ -1,0 +1,29 @@
+.featured-movie-container {
+}
+.page-title {
+  font-size: 4.5rem;
+}
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 1rem;
+}
+
+.featured-list-container {
+  height: 600px;
+  margin-bottom: 5rem;
+}
+.featured-backdrop {
+  height: 100%;
+  width: 100%;
+  background-size: cover !important;
+  display: flex;
+  align-items: end;
+}
+.featured-movie-title {
+  font-weight: bold;
+  font-size: 3rem;
+  width: 100%;
+  padding: 2rem;
+}

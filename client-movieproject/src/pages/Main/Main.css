@@ -1,0 +1,61 @@
+.Main {
+  display: flex;
+  overflow: hidden;
+  max-height: 100vh;
+}
+.Main .container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+.Main .container .outlet {
+  flex-grow: 3;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.Main .container .navigation {
+  height: 80px;
+  background-color: #15171b;
+  width: 100%;
+}
+.Main .container .navigation ul {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.Main .container .navigation ul li {
+  padding: 0px 60px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #61dafb;
+  font-weight: bold;
+}
+.Main .container .navigation ul li a {
+  text-decoration: none;
+  color: #61dafb;
+}
+.Main .container .navigation ul li.active a,
+.Main .container .navigation ul li:hover a {
+  text-decoration: none;
+  color: white;
+}
+.Main .container .navigation ul li.active,
+.Main .container .navigation ul li:hover {
+  background: #353a43;
+}
+.Main .container .navigation ul li a {
+  text-decoration: none;
+}
+
+.Main .container .navigation ul li.logout,
+.Main .container .navigation ul li.login {
+  cursor: pointer;
+  justify-self: end;
+}

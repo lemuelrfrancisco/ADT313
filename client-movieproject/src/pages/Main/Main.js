@@ -7,7 +7,6 @@ function Main() {
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
-    navigate('/');
   };
 
   useEffect(() => {
@@ -25,7 +24,7 @@ function Main() {
         <div className='navigation'>
           <ul>
             <li>
-              <a href='/main/movies'>Movies</a>
+              <a onClick={() => navigate('/')}>Movies</a>
             </li>
             {accessToken ? (
               <li className='logout'>

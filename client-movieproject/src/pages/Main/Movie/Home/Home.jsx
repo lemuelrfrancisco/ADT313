@@ -1,20 +1,21 @@
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import MovieCards from '../../../../components/MovieCards/MovieCards';
+import { useMovieContext } from '../../../../context/MovieContext';
 const Home = () => {
   const accessToken = localStorage.getItem('accessToken');
   const navigate = useNavigate();
-  const [lists, setLists] = useState([]);
   const [featuredMovie, setFeaturedMovie] = useState(null);
+  const { movieList, setMovieList, setMovie } = useMovieContext();
 
   const getMovies = () => {
     //get the movies from the api or database
     axios
       .get('/movies')
       .then((response) => {
-        setLists(response.data);
+        setMovieList(response.data);
         const random = Math.floor(Math.random() * response.data.length);
         setFeaturedMovie(response.data[random]);
       })
@@ -26,10 +27,10 @@ const Home = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      if (lists.length) {
+      if (movieList.length) {
         console.log('change movie');
-        const random = Math.floor(Math.random() * lists.length);
-        setFeaturedMovie(lists[random]);
+        const random = Math.floor(Math.random() * movieList.length);
+        setFeaturedMovie(movieList[random]);
       }
     }, 5000);
     return;
@@ -38,7 +39,7 @@ const Home = () => {
   return (
     <div className='main-container'>
       <h1 className='page-title'>Movies</h1>
-      {featuredMovie && lists.length ? (
+      {featuredMovie && movieList.length ? (
         <div className='featured-list-container'>
           <div
             className='featured-backdrop'
@@ -58,11 +59,14 @@ const Home = () => {
         <div className='featured-list-container-loader'></div>
       )}
       <div className='list-container'>
-        {lists.map((movie) => (
+        {movieList.map((movie) => (
           <>
             <MovieCards
               movie={movie}
-              onClick={() => alert('Open modal to view Movie')}
+              onClick={() => {
+                navigate(`/view/${movie.id}`);
+                setMovie(movie);
+              }}
             />
           </>
         ))}

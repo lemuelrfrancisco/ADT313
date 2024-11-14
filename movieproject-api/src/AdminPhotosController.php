@@ -1,7 +1,7 @@
 <?php
-class VideosController
+class AdminPhotosController
 {
-    public function __construct(private VideosGateway $gateway, private Auth $auth)
+    public function __construct(private AdminPhotosGateway $gateway, private Auth $auth)
     {
 
     }
@@ -19,10 +19,10 @@ class VideosController
 
     private function processResourceRequest(string $method, string $id): void
     {
-        $cast = $this->gateway->getAll($id);
+        $cast = $this->gateway->get($id);
         if (!$cast) {
             http_response_code(404);
-            echo json_encode(["message" => "Video not found"]);
+            echo json_encode(["message" => "Photo not found"]);
             return;
         }
 
@@ -48,7 +48,7 @@ class VideosController
                 $rows = $this->gateway->update($cast, $data);
 
                 echo json_encode([
-                    "message" => "Video $id updated.",
+                    "message" => "Photo $id updated.",
                     "rows" => $rows
                 ]);
                 break;
@@ -67,18 +67,18 @@ class VideosController
                     break;
                 }
 
-                //file upload for video
-                if (!empty($_FILES['video']['name']) && $type == 'form') {
-                    $profile_path = $_FILES['video']['name'];
-                    $temp_path = $_FILES['video']['tmp_name'];
-                    $file_size = $_FILES['video']['size'];
-                    $temp = explode(".", $_FILES["video"]["name"]);
+                //file upload for photo
+                if (!empty($_FILES['image']['name']) && $type == 'form') {
+                    $profile_path = $_FILES['image']['name'];
+                    $temp_path = $_FILES['image']['tmp_name'];
+                    $file_size = $_FILES['image']['size'];
+                    $temp = explode(".", $_FILES["image"]["name"]);
                     $new_profile_path = $temp[0].round(microtime(true)) . '.' . end($temp);
 
-                    $upload_path = "uploads/videos/";
+                    $upload_path = "uploads/photos/";
                     $file_ext = strtolower(pathinfo($profile_path, PATHINFO_EXTENSION));
 
-                    $valid_extensions = array("mp4", "mpg", "mpeg");
+                    $valid_extensions = array("jpeg", "jpg", "png", "gif");
                     if (in_array($file_ext, $valid_extensions)) {
                         if (!file_exists($upload_path . $new_profile_path)) {
                             if ($file_size < 5000000 && empty($errors)) {
@@ -98,7 +98,7 @@ class VideosController
                 $rows = $this->gateway->update($cast, $data);
 
                 echo json_encode([
-                    "message" => "Video $id updated.",
+                    "message" => "Photo $id updated.",
                     "rows" => $rows
                 ]);
                 break;
@@ -106,7 +106,7 @@ class VideosController
             case "DELETE":
                 $rows = $this->gateway->delete($id, $this->auth->getUserID());
                 echo json_encode([
-                    "message" => "Video $id deleted",
+                    "message" => "Photo $id deleted",
                     "rows" => $rows
                 ]);
                 break;
@@ -121,9 +121,9 @@ class VideosController
     private function processCollectionRequest(string $method): void
     {
         switch ($method) {
-            // case "GET":
-            //     echo json_encode($this->gateway->getAll());
-            //     break;
+            case "GET":
+                echo json_encode($this->gateway->getAll());
+                break;
 
             case "POST":
                 $jsonData = (array) json_decode(file_get_contents("php://input"), true);
@@ -132,18 +132,18 @@ class VideosController
        
                 $errors = $this->getValidationErrors($data, true, $type  );
 
-                //file upload for video
-                if (!empty($_FILES['video']['name']) && $type == 'form') {
-                    $profile_path = $_FILES['video']['name'];
-                    $temp_path = $_FILES['video']['tmp_name'];
-                    $file_size = $_FILES['video']['size'];
-                    $temp = explode(".", $_FILES["video"]["name"]);
+                //file upload for image
+                if (!empty($_FILES['image']['name']) && $type == 'form') {
+                    $profile_path = $_FILES['image']['name'];
+                    $temp_path = $_FILES['image']['tmp_name'];
+                    $file_size = $_FILES['image']['size'];
+                    $temp = explode(".", $_FILES["image"]["name"]);
                     $new_profile_path = $temp[0].round(microtime(true)) . '.' . end($temp);
 
-                    $upload_path = "uploads/videos/";
+                    $upload_path = "uploads/photos/";
                     $file_ext = strtolower(pathinfo($profile_path, PATHINFO_EXTENSION));
 
-                    $valid_extensions = array("mp4", "mpg", "mpeg");
+                    $valid_extensions = array("jpeg", "jpg", "png", "gif");
                     if (in_array($file_ext, $valid_extensions)) {
                         if (!file_exists($upload_path . $new_profile_path)) {
                             if ($file_size < 5000000 && empty($errors)) {
@@ -168,11 +168,12 @@ class VideosController
                     break;
                 }
                 $data['userId'] = $this->auth->getUserID();
+                
                 $id = $this->gateway->create($data);
 
                 http_response_code(201);
                 echo json_encode([
-                    "message" => "Video created",
+                    "message" => "Photo created",
                     "id" => $id
                 ]);
                 break;
@@ -190,9 +191,9 @@ class VideosController
             $errors[] = "Movie ID is required.";
         }
 
-        if ($is_new && empty($data["url"])) {
-            $errors[] = "Video URL is required.";
-        }
+        // if ($is_new && empty($data["url"])) {
+        //     $errors[] = "Photo URL is required.";
+        // }
 
         return $errors;
     }

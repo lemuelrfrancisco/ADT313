@@ -1,6 +1,6 @@
 <?php
 
-class PhotosGateway
+class AdminPhotosGateway
 {
     private PDO $conn;
     public function __construct(Database $database)
@@ -12,15 +12,10 @@ class PhotosGateway
     {
         $sql = "SELECT * FROM photos WHERE movieId = :movieId";
         $res = $this->conn->prepare($sql);
-        $res->bindValue(":movieId",$movieId, PDO::PARAM_INT);
+        $res->bindValue(":movieId",$data["movieId"], PDO::PARAM_INT);
 
         $res->execute();
-        $data = [];
-
-        while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
-            $data[] = $row;
-        }
-
+        $data = $res->fetch(PDO::FETCH_ASSOC);
         return $data;
     }
 

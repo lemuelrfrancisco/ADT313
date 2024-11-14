@@ -1,6 +1,6 @@
 <?php
 
-class MovieGateway
+class AdminMovieGateway
 {
     private PDO $conn;
     public function __construct(Database $database)
@@ -8,14 +8,47 @@ class MovieGateway
         $this->conn = $database->getConnection();
     }
 
-    public function getAll(): array
+    public function getAll(string $userId): array
     {
-        $sql = "SELECT * FROM movies";
-        $res = $this->conn->query($sql);
+        $sql = "SELECT * FROM movies WHERE userId = :userId";
+        $res = $this->conn->prepare($sql);
+        $res->bindValue(":userId",$userId, PDO::PARAM_INT);
+
         $data = [];
+        $res->execute();
 
         while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
             $row["isFeatured"] = (bool) $row["isFeatured"];
+
+            $castSql = "SELECT * FROM casts WHERE movieId = :movieId";
+            $res = $this->conn->prepare($castSql);
+            $res->bindValue(":movieId", $id, PDO::PARAM_INT);
+            $res->execute();
+            
+            $row["casts"] = [];
+            while ($castsRow = $res->fetch(PDO::FETCH_ASSOC)) {
+                $row["casts"][] = $castsRow;
+            }
+
+            $photosSql = "SELECT * FROM photos WHERE movieId = :movieId";
+            $res = $this->conn->prepare($photosSql);
+            $res->bindValue(":movieId", $id, PDO::PARAM_INT);
+            $res->execute();
+            
+            $row["photos"] = [];
+            while ($castsRow = $res->fetch(PDO::FETCH_ASSOC)) {
+                $row["photos"][] = $castsRow;
+            }
+
+            $videosSql = "SELECT * FROM videos WHERE movieId = :movieId";
+            $res = $this->conn->prepare($videosSql);
+            $res->bindValue(":movieId", $id, PDO::PARAM_INT);
+            $res->execute();
+            
+            $data["videos"] = [];
+            while ($videosRow = $res->fetch(PDO::FETCH_ASSOC)) {
+                $data["videos"][] = $videosRow;
+            }
             $data[] = $row;
         }
 
@@ -43,11 +76,13 @@ class MovieGateway
         return $this->conn->lastInsertId();
     }
 
-    public function get(string $id)
+    public function get(string $id, string $userId)
     {
-        $sql = "SELECT * FROM movies WHERE id = :id";
+        $sql = "SELECT * FROM movies WHERE id = :id AND userId = :userId";
         $res = $this->conn->prepare($sql);
         $res->bindValue(":id", $id, PDO::PARAM_INT);
+        $res->bindValue(":userId", $userId, PDO::PARAM_INT);
+
         $res->execute();
         $data = $res->fetch(PDO::FETCH_ASSOC);
 

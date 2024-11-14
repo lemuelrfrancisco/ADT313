@@ -12,10 +12,15 @@ class CastsGateway
     {
         $sql = "SELECT * FROM casts WHERE movieId = :movieId";
         $res = $this->conn->prepare($sql);
-        $res->bindValue(":movieId",$data["movieId"], PDO::PARAM_INT);
+        $res->bindValue(":movieId",$movieId, PDO::PARAM_INT);
 
         $res->execute();
-        $data = $res->fetch(PDO::FETCH_ASSOC);
+        $data = [];
+
+        while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
+            $data[] = $row;
+        }
+
         return $data;
     }
 

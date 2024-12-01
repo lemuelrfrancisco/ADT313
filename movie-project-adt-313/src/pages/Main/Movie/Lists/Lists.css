@@ -1,0 +1,17 @@
+.lists-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.create-container {
+  align-self: flex-end;
+  margin: 1rem 0;
+}
+.table-container,
+.movie-lists {
+  width: 100%;
+}
+
+.table-container {
+  text-align: center;
+}

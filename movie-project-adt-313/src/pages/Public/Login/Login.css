@@ -1,0 +1,96 @@
+/* Login.css */
+
+/* Define the keyframes for the moving background */
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.Login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('C:\\Users\\acema\\Downloads\\animated characters___.jpg') repeat-x;
+  background-size: cover;
+  animation: moveBackground 20s linear infinite;
+}
+
+.main-container-login {
+  background: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+.form-container-login h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group-emailLogin,
+.form-group-passwordLogin {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.errors {
+  color: red;
+  font-size: 12px;
+}
+
+.submit-container-login {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:disabled {
+  background-color: #aaa;
+}
+
+button:hover:enabled {
+  background-color: #0056b3;
+}
+
+.show-password-login {
+  margin-top: 10px;
+  color: #007bff;
+  cursor: pointer;
+  text-align: right;
+}
+
+.register-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.register-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-container a:hover {
+  text-decoration: underline;
+}

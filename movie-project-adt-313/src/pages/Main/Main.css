@@ -1,0 +1,39 @@
+.Main {
+  display: flex;
+  overflow: hidden;
+  max-height: 100vh;
+}
+.Main .container {
+  display: flex;
+  width: 100vw;
+}
+.Main .container .outlet {
+  flex-grow: 3;
+  padding: 1rem;
+}
+.Main .container .navigation {
+  background-color: aliceblue;
+  padding-top: 40px;
+  height: 100vh;
+}
+.Main .container .navigation ul {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.Main .container .navigation ul li {
+  padding: 10px 80px 10px 20px;
+}
+.Main .container .navigation ul li.active,
+.Main .container .navigation ul li:hover {
+  background: #ccc;
+}
+.Main .container .navigation ul li a {
+  text-decoration: none;
+}
+
+.Main .container .navigation ul li.logout {
+  cursor: pointer;
+}

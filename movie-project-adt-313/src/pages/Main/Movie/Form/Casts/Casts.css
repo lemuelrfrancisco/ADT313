@@ -1,0 +1,23 @@
+ .castProfile{
+    color: blue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+ }
+ 
+ .castImg {
+    border-radius: 5px;
+    color: blue;
+    padding: 3px;
+}
+.button-Add:hover{
+    background-color: hsl(216, 74%, 21%);
+}
+
+.button-Add{
+    border-radius: 10px;
+    color: hsl(216, 100%, 58%);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    padding: 10px;
+
+}

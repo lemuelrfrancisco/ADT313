@@ -1,17 +1,109 @@
+/* Lists.css */
 .lists-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212; /* Dark background for a cinematic feel */
+  color: #fdfdfd; /* White text for contrast */
+  padding: 20px;
+  min-height: 100vh;
 }
+
 .create-container {
-  align-self: flex-end;
-  margin: 1rem 0;
+  margin-bottom: 20px;
+  text-align: center;
 }
-.table-container,
-.movie-lists {
-  width: 100%;
+
+.create-container button {
+  background-color: #e50914; /* Netflix-inspired red */
+  color: #fff;
+  border: none;
+  width: 100px;
+  margin-left: 1050px;
+  padding: 7px 5px; /* Reduced padding for a smaller button */
+  font-size: 14px; /* Slightly smaller font */
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-container button:hover {
+  background-color: #b00710; /* Darker red on hover */
 }
 
 .table-container {
-  text-align: center;
+  overflow-x: auto; /* For responsiveness */
+}
+
+.movie-lists {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1c1c1c; /* Slightly lighter than the main background */
+  border-spacing: 10px;
+  padding: 10px;
+}
+
+.movie-lists th,
+.movie-lists td {
+  padding: 20px; /* Reduced padding for compact rows */
+  text-align: left;
+  border-bottom: 1px solid #333; /* Subtle dividers */
+}
+
+.movie-lists th {
+  background-color: #333; /* Darker for table headers */
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.movie-lists th:last-child,
+.movie-lists td:last-child {
+  text-align:center; /* Align the Actions column to the right */
+}
+
+.movie-lists tr:hover {
+  background-color: #282828; /* Highlight row on hover */
+}
+
+.movie-lists td button {
+  background-color: #4caf50; /* Green for edit */
+  color: #fff;
+  border: none;
+  width: 100px;
+  padding: 6px 10px; /* Smaller button padding */
+  font-size: 12px; /* Smaller font size */
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.movie-lists td button:last-child {
+  background-color: #f44336; /* Red for delete */
+}
+
+.movie-lists td button:hover {
+  opacity: 0.8;
+}
+
+.movie-lists td:first-child {
+  width: 300px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .movie-lists th,
+  .movie-lists td {
+    padding: 20px;
+    font-size: 12px;
+  }
+
+  .create-container button {
+    font-size: 12px;
+    padding: 6px 12px; /* Adjusted for responsiveness */
+  }
+
+  .movie-lists td button {
+    font-size: 10px; /* Smaller buttons on smaller screens */
+    padding: 5px 8px;
+  }
 }

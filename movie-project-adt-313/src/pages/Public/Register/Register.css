@@ -1,46 +1,93 @@
-.main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Define the keyframes for the moving background */
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
   }
-  
-  .form-container {
-    padding: 4rem 2rem;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  100% {
+    background-position: -200% 0;
   }
-  .form-container > div {
-    margin-bottom: 12px;
-  }
-  
-  .form-group {
-    display: flex;
-  }
-  
-  .form-group label {
-    width: 70px;
-    margin-right: 8px;
-    text-align: left;
-  }
-  .errors {
-    color: red;
-    font-size: 12px;
-  }
-  .submit-container {
-    margin-top: 12px;
-    text-align: center;
-  }
-  .register-container {
-    text-align: center;
-  }
-  .show-password {
-    margin-bottom: 1rem;
-    cursor: pointer;
-  }
-  
+}
+
+.Register {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('C:\\Users\\acema\\Downloads\\animated characters___.jpg') repeat-x;
+  background-size: cover;
+  animation: moveBackground 20s linear infinite;
+}
+
+.main-container-register {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+.form-container-register h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group-register {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.errors {
+  color: red;
+  font-size: 12px;
+}
+
+.submit-container-register {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:disabled {
+  background-color: #aaa;
+}
+
+button:hover:enabled {
+  background-color: #0056b3;
+}
+
+.show-password-register {
+  margin-top: 10px;
+  color: #007bff;
+  cursor: pointer;
+  text-align: right;
+}
+
+.login-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.login-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}

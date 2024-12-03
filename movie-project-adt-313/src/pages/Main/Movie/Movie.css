@@ -1,0 +1,44 @@
+/* Movie.css */
+
+/* General container styles */
+.movies-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.movies-container h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.outlet {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .movies-container {
+    padding: 15px;
+  }
+
+  .movies-container h1 {
+    font-size: 20px;
+  }
+
+  .outlet {
+    padding: 15px;
+  }
+}

@@ -12,5 +12,5 @@
   }
   
   .container {
-    overflow: auto;
+    overflow:scroll;
   }

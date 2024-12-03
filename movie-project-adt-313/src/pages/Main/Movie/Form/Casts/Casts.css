@@ -10,14 +10,16 @@
     padding: 3px;
 }
 .button-Add:hover{
-    background-color: hsl(216, 74%, 21%);
+    background-color: hsl(216, 93%, 16%);
 }
 
 .button-Add{
     border-radius: 10px;
-    color: hsl(216, 100%, 58%);
+    color: hsl(0, 0%, 100%);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     padding: 10px;
+    background-color: hsl(127, 83%, 28%);
+    width: 100px;
 
 }

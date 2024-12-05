@@ -1,0 +1,103 @@
+.videos {
+    padding: 20px;
+    background-color: #0000005f;
+    font-family: Arial, sans-serif;
+  }
+  
+  .videos__add-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 300px;
+  }
+  
+  .videos__add-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .videos__form-container {
+    margin-bottom: 20px;
+    background: #222121;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+  }
+  
+  .videos__form label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  .videos__form input {
+    width: 300px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  .videos__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .videos__item {
+    background: #100f0f;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .videos__title {
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: black;
+  }
+  
+  .videos__site {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .videos__iframe {
+    width: 100%;
+    height: 315px;
+    margin-bottom: 15px;
+  }
+  
+  .videos__edit-button,
+  .videos__delete-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .videos__edit-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .videos__edit-button:hover {
+    background-color: #218838;
+  }
+  
+  .videos__delete-button {
+    background-color: #dc3545;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  .videos__delete-button:hover {
+    background-color: #c82333;
+  }
+  

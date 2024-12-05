@@ -1,0 +1,16 @@
+*{
+    background-color: black;
+}
+
+.text-firstname{
+    color: goldenrod;
+    font-size: 100px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.text-lastname{
+    color: rgb(243, 228, 148);
+    font-size: 100px;
+    font-family: 'Times New Roman', Times, serif;
+}

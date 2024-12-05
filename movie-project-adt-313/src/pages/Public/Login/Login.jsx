@@ -75,13 +75,14 @@ function Login() {
       <div className='main-container-login'>
         <form>
           <div className='form-container-login'>
-            <h3>Login</h3>
+            <h3 className='title-login'>Login</h3>
 
             {error && <span className='login errors'>{error}</span>}
             <div>
               <div className='form-group-emailLogin'>
-                <label>E-mail:</label>
+                <label className='title-email'>E-mail:</label>
                 <input
+                  className='email-login'
                   type='text'
                   name='email'
                   ref={emailRef}
@@ -94,8 +95,9 @@ function Login() {
             </div>
             <div>
               <div className='form-group-passwordLogin'>
-                <label>Password:</label>
+                <label className='title-password'>Password:</label>
                 <input
+                  className='password-login'
                   type={isShowPassword ? 'text' : 'password'}
                   name='password'
                   ref={passwordRef}

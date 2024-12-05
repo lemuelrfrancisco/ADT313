@@ -1,6 +1,3 @@
-/* Login.css */
-
-/* Define the keyframes for the moving background */
 @keyframes moveBackground {
   0% {
     background-position: 0 0;
@@ -21,11 +18,12 @@
 }
 
 .main-container-login {
-  background: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
+  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 350px;
+  color: rgb(54, 67, 208);
 }
 
 .form-container-login h3 {
@@ -93,4 +91,12 @@ button:hover:enabled {
 
 .register-container a:hover {
   text-decoration: underline;
+}
+
+.email-login{
+  width: 330px;
+}
+
+.password-login{
+  width: 330px;
 }

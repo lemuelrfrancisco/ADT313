@@ -91,6 +91,7 @@ function Register() {
               <div key={index} className='form-group-register'>
                 <label>{label}:</label>
                 <input
+                className='email-reg'
                   type='text'
                   onChange={(e) => handleOnChange(e, label.replace(' ', '').toLowerCase())}
                 />
@@ -100,6 +101,7 @@ function Register() {
               <div key={index} className='form-group-register'>
                 <label>{label}:</label>
                 <input
+                className='pass-reg'
                   type={isShowPassword ? 'text' : 'password'}
                   onChange={(e) => handleOnChange(e, label.replace(' ', '').toLowerCase())}
                 />

@@ -1,4 +1,3 @@
-/* Define the keyframes for the moving background */
 @keyframes moveBackground {
   0% {
     background-position: 0 0;
@@ -9,8 +8,8 @@
 }
 
 .Register {
-  height: 100vh;
   display: flex;
+  margin: auto;
   justify-content: center;
   align-items: center;
   background: url('C:\\Users\\acema\\Downloads\\animated characters___.jpg') repeat-x;
@@ -19,7 +18,7 @@
 }
 
 .main-container-register {
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -28,11 +27,11 @@
 
 .form-container-register h3 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .form-group-register {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 input {
@@ -90,4 +89,12 @@ button:hover:enabled {
 
 .login-container a:hover {
   text-decoration: underline;
+}
+
+.email-reg{
+  width: 330px;
+}
+
+.pass-reg{
+  width: 330px;
 }

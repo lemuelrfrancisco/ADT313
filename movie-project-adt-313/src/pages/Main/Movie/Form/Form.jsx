@@ -11,7 +11,7 @@ const Form = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const navigate = useNavigate();
-  let { movieId } = useParams();
+  const { movieId } = useParams();
 
   const handleSearch = useCallback(() => {
     if (query.trim() === '') return; 
@@ -21,7 +21,7 @@ const Form = () => {
       headers: {
         Accept: 'application/json',
         Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTdiNmUyNGJkNWRkNjhiNmE1ZWFjZjgyNWY3NGY5ZCIsIm5iZiI6MTcyOTI5NzI5Ny4wNzMzNTEsInN1YiI6IjY2MzhlZGM0MmZhZjRkMDEzMGM2NzM3NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ZIX4EF2yAKl6NwhcmhZucxSQi1rJDZiGG80tDd6_9XI', 
+          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZGY2NjBjMjU0NzY0NTY0ZWMzMTFmNDU3MmU0NjJhZCIsIm5iZiI6MTczMzMzMzc2My4wNDYwMDAyLCJzdWIiOiI2NzUwOTMwM2E5M2JkZWE4YzI1MGFlMzkiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.iliwXeP_g8bJueLNgcx4WmrOzrYdJNE61SyiZKR3Eow',
       },
     })
       .then((response) => {
@@ -129,7 +129,6 @@ const Form = () => {
                   onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}>
                   Previous
                 </button>
-                {}
                 <span>
                   Page {currentPage} of {totalPages}
                 </span>
@@ -145,7 +144,7 @@ const Form = () => {
         </>
       )}
 
-      <div className='container'>
+      <div className='form-container'>
         <form>
           {selectedMovie && (
             <img
@@ -218,7 +217,7 @@ const Form = () => {
           </button>
         </form>
       </div>
-      
+
       {movieId !== undefined && selectedMovie && (
         <div>
           <hr />
@@ -250,8 +249,7 @@ const Form = () => {
 
           <Outlet />
         </div>
-       )}
-
+      )}
     </>
   );
 };

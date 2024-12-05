@@ -20,22 +20,23 @@ function Main() {
     }
   }, []);
   return (
-    <div className='Main'>
-      <div className='container'>
-        <div className='navigation'>
+    <div className='main-wrapper'>
+      <div className='main-container'>
+        <div className='navigation-sidebar'>
           <ul>
-            {/* <li>
-              <a href='/main/dashboard'>Dashboard</a>
-            </li> */}
             <li>
-              <a href='/main/movies'>Movies</a>
+              <a href='/main/movies' className='nav-link'>
+                Movies
+              </a>
             </li>
-            <li className='logout'>
-              <a onClick={handleLogout}>Logout</a>
+            <li className='logout-item'>
+              <a onClick={handleLogout} className='logout-link'>
+                Logout
+              </a>
             </li>
           </ul>
         </div>
-        <div className='outlet'>
+        <div className='main-content'>
           <Outlet />
         </div>
       </div>

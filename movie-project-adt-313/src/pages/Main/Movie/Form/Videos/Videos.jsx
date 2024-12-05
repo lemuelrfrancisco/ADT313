@@ -14,27 +14,22 @@ function Videos() {
   const accessToken = localStorage.getItem("accessToken");
   const user = JSON.parse(localStorage.getItem('user'));
 
-  // Handle form changes
   const handleOnChange = (e) => {
-    const { name, value } = e.target;
-    
-    // Update selectedVideo state when in update mode
+    const { name, value, type } = e.target;
+
     if (state === "update") {
       setSelectedVideo((prevSelectedVideo) => ({
         ...prevSelectedVideo,
         [name]: value,
       }));
     } else {
-      // Update data state when adding a new video
       setData((prevData) => ({
         ...prevData,
         [name]: value,
       }));
     }
   };
-  
 
-  // Fetch existing video information on page load
   useEffect(() => {
     axios({
       method: 'get',
@@ -45,12 +40,10 @@ function Videos() {
       },
     }).then((response) => {
       setVideoInfo(response.data);
-      console.log(response.data);
     });
   }, []);
 
-  // Handle save for new video
-  const handleSave = async (event) => {
+  const handleSave = async () => {
     const formData = new FormData();
     formData.append('userId', user.userId);
     formData.append('movieId', tmdbId);
@@ -72,11 +65,15 @@ function Videos() {
     })
       .then((response) => {
         console.log(response.data);
+        window.alert("Video has been saved successfully!"); // Pop-up message
+        setState("base"); // Reset to base state
+      })
+      .catch((error) => {
+        console.error("Error saving video:", error);
       });
   };
 
-  // Handle update for an existing video
-  const handleUpdate = async (event) => {
+  const handleUpdate = async () => {
     const updateData = {
       id: selectedVideo.id,
       userId: selectedVideo.userId,
@@ -97,13 +94,11 @@ function Videos() {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${accessToken}`,
       },
-    })
-      .then((response) => {
-        console.log(response.data);
-      });
+    }).then((response) => {
+      console.log(response.data);
+    });
   };
 
-  // Handle delete for a specific video
   const handleDelete = (id) => {
     const isConfirmed = window.confirm('Are you sure you want to delete this video?');
     if (isConfirmed) {
@@ -113,111 +108,140 @@ function Videos() {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
-      })
-        .then((response) => {
-          console.log('Video Deleted');
-        });
+      }).then(() => {
+        console.log('Video Deleted');
+      });
     }
   };
 
-  // Render the form for adding or updating video
-  const renderForm = () => {
-    if (state === "add") {
-      return (
-        <div>
-          <form>
+  const renderForm = () => (
+    <div className="videos__form-container">
+      <form className="videos__form">
+        <label>
+          Video URL:
+          <input
+            type="text"
+            name="url"
+            value={state === "update" ? selectedVideo.url : data.url}
+            onChange={handleOnChange}
+          />
+        </label>
+        <label>
+          Video Name:
+          <input
+            type="text"
+            name="name"
+            value={state === "update" ? selectedVideo.name : data.name}
+            onChange={handleOnChange}
+          />
+        </label>
+        <label>
+          Video Site:
+          <input
+            type="text"
+            name="site"
+            value={state === "update" ? selectedVideo.site : data.site}
+            onChange={handleOnChange}
+          />
+        </label>
+        <label>
+          Video Key:
+          <input
+            type="text"
+            name="videoKey"
+            value={state === "update" ? selectedVideo.videoKey : data.videoKey}
+            onChange={handleOnChange}
+          />
+        </label>
+        <label>
+          Video Type:
+          <input
+            type="text"
+            name="videoType"
+            value={state === "update" ? selectedVideo.videoType : data.videoType}
+            onChange={handleOnChange}
+          />
+        </label>
+        <label>
+          Official:
+          <div>
             <label>
-              Video URL
-              <input type="text" name="url" value={data.url} onChange={handleOnChange} />
+              <input
+                type="radio"
+                name="official"
+                value="1"
+                checked={state === "update" ? selectedVideo.official === "1" : data.official === "1"}
+                onChange={handleOnChange}
+              />
+              Yes
             </label>
             <label>
-              Video Name
-              <input type="text" name="name" value={data.name} onChange={handleOnChange} />
+              <input
+                type="radio"
+                name="official"
+                value="0"
+                checked={state === "update" ? selectedVideo.official === "0" : data.official === "0"}
+                onChange={handleOnChange}
+              />
+              No
             </label>
-            <label>
-              Video Site
-              <input type="text" name="site" value={data.site} onChange={handleOnChange} />
-            </label>
-            <label>
-              Video Key
-              <input type="text" name="videoKey" value={data.videoKey} onChange={handleOnChange} />
-            </label>
-            <label>
-              Video Type
-              <input type="text" name="videoType" value={data.videoType} onChange={handleOnChange} />
-            </label>
-            <label>
-              Official (0 or 1)
-              <input type="text" name="official" value={data.official} onChange={handleOnChange} />
-            </label>
-          </form>
-          <button onClick={handleSave}>Save</button>
-        </div>
-      );
-    } else if (state === "update") {
-      return (
-        <div>
-          <form>
-            <label>
-              Video URL
-              <input type="text" name="url" value={selectedVideo.url} onChange={handleOnChange} />
-            </label>
-            <label>
-              Video Name
-              <input type="text" name="name" value={selectedVideo.name} onChange={handleOnChange} />
-            </label>
-            <label>
-              Video Site
-              <input type="text" name="site" value={selectedVideo.site} onChange={handleOnChange} />
-            </label>
-            <label>
-              Video Key
-              <input type="text" name="videoKey" value={selectedVideo.videoKey} onChange={handleOnChange} />
-            </label>
-            <label>
-              Video Type
-              <input type="text" name="videoType" value={selectedVideo.videoType} onChange={handleOnChange} />
-            </label>
-            <label>
-              Official (0 or 1)
-              <input type="text" name="official" value={selectedVideo.official} onChange={handleOnChange} />
-            </label>
-          </form>
-          <button onClick={handleUpdate}>Save</button>
-        </div>
-      );
-    }
-  };
-
-  return (
-    <div>
-      <button onClick={() => setState(state === "base" ? "add" : "base")}>Add Video</button>
-      {renderForm()}
-  
-      {videoInfo.map((video) =>
-        video.movieId === parseInt(tmdbId) && (
-          <div key={video.id}>
-            <h1>{video.name}</h1>
-            <h3>{video.site}</h3>
-            {video.url.includes("youtube") && (
-              <iframe
-                width="560"
-                height="315"
-                src={`https://www.youtube.com/embed/${video.videoKey}`}
-                title={video.name}
-                frameBorder="0"
-                allowFullScreen
-                className="video-iframe"
-              ></iframe>
-            )}
-            <button onClick={() => { setSelectedVideo(video); setState("update"); }}>Edit</button>
-            <button onClick={() => handleDelete(video.id)}>Delete</button>
           </div>
-        )
-      )}
+        </label>
+      </form>
+      <button onClick={state === "update" ? handleUpdate : handleSave}>
+        {state === "update" ? "Update" : "Save"}
+      </button>
     </div>
   );
-  
+
+  return (
+    <div className="videos">
+      <button
+        className="videos__add-button"
+        onClick={() => setState(state === "base" ? "add" : "base")}
+      >
+        {state === "add" ? "Cancel" : "Add Video"}
+      </button>
+      {state !== "base" && renderForm()}
+      <div className="videos__list">
+        {videoInfo.map(
+          (video) =>
+            video.movieId === parseInt(tmdbId) && (
+              <div className="videos__item" key={video.id}>
+                <h1 className="videos__title">{video.name}</h1>
+                <h3 className="videos__site">{video.site}</h3>
+                {video.url.includes("youtube") && (
+                  <iframe
+                    className="videos__iframe"
+                    width="560"
+                    height="315"
+                    src={`https://www.youtube.com/embed/${video.videoKey}`}
+                    title={video.name}
+                    frameBorder="0"
+                    allowFullScreen
+                  ></iframe>
+                )}
+                <button
+                  className="videos__edit-button"
+                  onClick={() => {
+                    setSelectedVideo(video);
+                    setState("update");
+                  }}
+                >
+                  Edit
+                </button>
+                <button
+                  className="videos__delete-button"
+                  onClick={() => handleDelete(video.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            )
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default Videos;

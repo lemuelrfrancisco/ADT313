@@ -1,25 +1,157 @@
- .castProfile{
-    color: blue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
- }
- 
- .castImg {
-    border-radius: 5px;
-    color: blue;
-    padding: 3px;
-}
-.button-Add:hover{
-    background-color: hsl(216, 93%, 16%);
-}
-
-.button-Add{
-    border-radius: 10px;
-    color: hsl(0, 0%, 100%);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 15px;
-    padding: 10px;
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .container {
+    padding: 20px;
+    max-width: 2300px;
+    margin: 0 auto;
+    background-color: #29293d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .button-Add {
+    display: inline-block;
+    padding: 10px 20px;
     background-color: hsl(127, 83%, 28%);
-    width: 100px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    height: min-content;
+    width: 300px;
+  }
+  
+  .button-Add:hover {
+    background-color: hsl(216, 93%, 16%);
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  form button {
+    padding: 10px 20px;
+    background-color: hsl(127, 83%, 28%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: hsl(216, 93%, 16%);
+  }
+  
+  .cast-card {
+    
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #21315a;
+    transition: box-shadow 0.3s ease;
+    margin-top: 50px;
+    color: #ddd;
+    margin-right: 10px;
+    width: 300px;
 
-}
+  }
+  
+  .cast-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cast-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  .cast-card .info {
+    flex: 1;
+    margin-top: 50px;
+  }
+  
+  .cast-card h1 {
+    margin: 0;
+    font-size: 18px;
+    color: #ffffff;
+  }
+  
+  .cast-card h3 {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #ffffff;
+  }
+  
+  /* Action buttons */
+  .cast-card .actions button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .cast-card .actions .edit-button {
+    background-color: #007bff;
+    color: white;
+    width: 300px;
+  }
+  
+  .cast-card .actions .delete-button {
+    background-color: #dc3545;
+    color: white;
+    width: 300px;
+    margin-top: 20px;
+  }
+  
+  .cast-card .actions button:hover {
+    opacity: 60%;
+  }
+
+  .button-Import{
+    width: 300px;
+    margin-left: 10px;
+
+  }
+
+  .button-SearchImp{
+    width: 300px;
+    margin-left: 10px;
+  }
+
+  .search-MovieImp{
+    width: 300px;
+    margin-left: 10px;
+  }
+  

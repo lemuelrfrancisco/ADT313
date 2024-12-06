@@ -11,7 +11,7 @@
 
 .movies-container h1 {
   font-size: 24px;
-  color: #f44545; 
+  color: #eae7e7; 
   text-align: center;
   margin-bottom: 20px;
   border-bottom: 2px solid #007bff; 
@@ -26,6 +26,7 @@
   border-radius: 10px;
   border: 1px solid #444; 
   color: #dcdcdc; 
+  text-align: center;
 }
 
 

@@ -7,8 +7,7 @@ function Casts() {
   const [selectedCast, setSelectedCast] = useState(null); 
   const [castInfo, setCastInfo] = useState([]);
   const [state, setState] = useState("base");
-  const [movieQuery, setMovieQuery] = useState("");
-  const [importedCast, setImportedCast] = useState([]);
+  const [importedCast, setImportedCast] = useState([]);  // Store imported cast
   const [loading, setLoading] = useState(false);
   const [castFormData, setCastFormData] = useState({
     name: '',
@@ -24,7 +23,7 @@ function Casts() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: `/casts`,
+      url: `/casts`,  
       headers: {
         Accept: 'application/json',
         Authorization: `Bearer ${accessToken}`,
@@ -52,7 +51,7 @@ function Casts() {
 
     axios({
       method: 'post',
-      url: '/casts',
+      url: '/casts',  // Adjust this endpoint to work with your backend
       data: formData,
       headers: {
         'Content-Type': 'multipart/form-data',
@@ -78,7 +77,7 @@ function Casts() {
 
     axios({
       method: 'patch',
-      url: `/casts/${selectedCast.id}`,
+      url: `/casts/${selectedCast.id}`,  // Use the correct dynamic URL
       data: updatedCast,
       headers: {
         'Content-Type': 'application/json',
@@ -107,7 +106,7 @@ function Casts() {
     if (isConfirmed) {
       axios({
         method: 'delete',
-        url: `/casts/${id}`,
+        url: `/casts/${id}`,  // Use the correct dynamic URL
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -119,101 +118,219 @@ function Casts() {
     }
   };
 
-  const renderAddOrEditForm = () => (
-    <div className="add-edit-form">
-      <form>
-        <label>
-          Cast Name:
+  const handleImportCast = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/${tmdbId}/credits?api_key=${TMDB_API_KEY}`
+      );
+      const importedData = response.data.cast;
+      setImportedCast(importedData);  // Store imported cast
+
+      setCastInfo((prev) => [
+        ...prev,
+        ...importedData.map((cast) => ({
+          name: cast.name,
+          characterName: cast.character,
+          url: `https://image.tmdb.org/t/p/w500${cast.profile_path}`, // Construct image URL
+        }))
+      ]);
+    } catch (error) {
+      console.error("Error importing cast:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCancelImport = () => {
+    setImportedCast([]);  // Reset the imported cast data
+    setLoading(false);  // Stop the loading state
+  };
+
+  const handleAddImportedCast = (cast) => {
+    const formData = new FormData();
+    formData.append('userId', user.userId);
+    formData.append('movieId', tmdbId);
+    formData.append('name', cast.name);
+    formData.append('characterName', cast.character);
+    formData.append('url', `https://image.tmdb.org/t/p/w500${cast.profile_path}`);
+
+    axios({
+      method: 'post',
+      url: '/casts',  // Adjust this endpoint to work with your backend
+      data: formData,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
+      .then((response) => {
+        setCastInfo([...castInfo, response.data]);
+        alert(`${cast.name} has been added to the cast list.`);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  return (
+    <div className="container">
+      <div className="button-container">
+        <button
+          className="button-Add"
+          onClick={() => setState("add")}
+        >
+          Add Cast
+        </button>
+        <button
+          className="button-Import"
+          onClick={handleImportCast}
+        >
+          Import Cast from TMDB
+        </button>
+      </div>
+
+      {state === "add" && (
+        <div className="add-edit-form">
+          <label>Name:</label>
           <input
             type="text"
             name="name"
             value={castFormData.name}
             onChange={handleInputChange}
-            placeholder="Enter cast name"
           />
-        </label>
-        <label>
-          Character Name:
+          <label>Character Name:</label>
           <input
             type="text"
             name="characterName"
             value={castFormData.characterName}
             onChange={handleInputChange}
-            placeholder="Enter character name"
           />
-        </label>
-        <label>
-          Profile URL:
+          <label>Profile Image URL:</label>
           <input
             type="text"
             name="url"
             value={castFormData.url}
             onChange={handleInputChange}
-            placeholder="Enter profile image URL"
           />
-        </label>
-      </form>
-      <button onClick={state === "edit" ? handleEditCast : handleSaveNewCast}>
-        {state === "edit" ? "Save Changes" : "Add Cast"}
-      </button>
-    </div>
-  );
+          <button
+            onClick={handleSaveNewCast}
+          >
+            Save Cast
+          </button>
+          <button
+            onClick={() => setState("base")}
+          >
+            Cancel
+          </button>
+        </div>
+      )}
 
-  return (
-    <div className="container">
-      <button
-        className="button-Add"
-        onClick={() => {
-          resetForm();
-          setState(state === "add" ? "base" : "add");
-        }}
-      >
-        {state === "add" ? "Cancel" : "Add Cast"}
-      </button>
+      {/* Edit Cast Form */}
+      {state === "edit" && (
+        <div className="add-edit-form">
+          <label>Name:</label>
+          <input
+            type="text"
+            name="name"
+            value={castFormData.name}
+            onChange={handleInputChange}
+          />
+          <label>Character Name:</label>
+          <input
+            type="text"
+            name="characterName"
+            value={castFormData.characterName}
+            onChange={handleInputChange}
+          />
+          <label>Profile Image URL:</label>
+          <input
+            type="text"
+            name="url"
+            value={castFormData.url}
+            onChange={handleInputChange}
+          />
+          <button
+            onClick={handleEditCast} // Call function to save changes
+          >
+            Save Changes
+          </button>
+          <button
+            onClick={() => {
+              resetForm(); // Reset form state
+              setState("base"); // Return to base state
+            }}
+          >
+            Cancel
+          </button>
+        </div>
+      )}
 
-      <button
-        className="button-Import"
-        onClick={() => setState("import")}
-      >
-        Import Cast
-      </button>
-
-      {state === "add" && renderAddOrEditForm()}
-      {state === "edit" && renderAddOrEditForm()}
-
-      {castInfo.map((cast) => (
-        cast.movieId === parseInt(tmdbId) && (
-          <div key={cast.id} className="cast-card">
-            <img src={cast.url} alt={`${cast.name} Profile`} />
-            <div className="info">
-              <h1>{cast.name}</h1>
-              <h3>Character: {cast.characterName}</h3>
-            </div>
-            <div className="actions">
+      {/* Render imported cast list */}
+      {importedCast.length > 0 && (
+        <div className="imported-cast-container">
+          {importedCast.map((cast) => (
+            <div key={cast.id} className="cast-card">
+              <img src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`} alt={cast.name} />
+              <div className="info">
+                <h3>{cast.name}</h3>
+                <p>{cast.character}</p>
+              </div>
               <button
                 className="edit-button"
-                onClick={() => {
-                  setSelectedCast(cast);
-                  setCastFormData({
-                    name: cast.name,
-                    characterName: cast.characterName,
-                    url: cast.url,
-                  });
-                  setState("edit");
-                }}
+                onClick={() => handleAddImportedCast(cast)}
               >
-                Edit
-              </button>
-              <button
-                className="delete-button"
-                onClick={() => handleDelete(cast.id)}
-              >
-                Delete
+                Add to Cast
               </button>
             </div>
-          </div>
-        )
-      ))}
+          ))}
+          <button
+            className="cancel-button"
+            onClick={handleCancelImport}  // Reset imported cast and stop loading
+          >
+            Cancel Import
+          </button>
+        </div>
+      )}
+
+      {/* Render saved cast list */}
+      {castInfo.length > 0 && (
+        <div className="saved-cast-container">
+          {castInfo.map((cast) => (
+            cast.movieId === parseInt(tmdbId) && (
+              <div key={cast.id} className="cast-card">
+                <img src={cast.url} alt={cast.name} />
+                <div className="info">
+                  <h3>{cast.name}</h3>
+                  <p>{cast.characterName}</p>
+                </div>
+                <div className="actions">
+                  <button
+                    className="edit-button"
+                    onClick={() => {
+                      setState("edit");
+                      setCastFormData({
+                        name: cast.name,
+                        characterName: cast.characterName,
+                        url: cast.url,
+                      });
+                      setSelectedCast(cast); // Set selected cast for editing
+                    }}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="delete-button"
+                    onClick={() => handleDelete(cast.id)}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            )
+          ))}
+        </div>
+      )}
+
+      {loading && <p>Loading...</p>}
     </div>
   );
 }

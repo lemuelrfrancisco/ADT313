@@ -1,157 +1,222 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  .container {
-    padding: 20px;
-    max-width: 2300px;
-    margin: 0 auto;
-    background-color: #29293d;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .button-Add {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: hsl(127, 83%, 28%);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    transition: background-color 0.3s ease;
-    height: min-content;
-    width: 300px;
-  }
-  
-  .button-Add:hover {
-    background-color: hsl(216, 93%, 16%);
-  }
-  
-  form {
-    margin-bottom: 20px;
-  }
-  
-  form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    font-size: 14px;
-  }
-  
-  form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  form button {
-    padding: 10px 20px;
-    background-color: hsl(127, 83%, 28%);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  form button:hover {
-    background-color: hsl(216, 93%, 16%);
-  }
-  
-  .cast-card {
-    
-    align-items: center;
-    gap: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    background-color: #21315a;
-    transition: box-shadow 0.3s ease;
-    margin-top: 50px;
-    color: #ddd;
-    margin-right: 10px;
-    width: 300px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
 
-  }
-  
-  .cast-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cast-card img {
-    width: 200px;
-    height: 200px;
-    border-radius: 5px;
-    object-fit: cover;
-  }
-  
-  .cast-card .info {
-    flex: 1;
-    margin-top: 50px;
-  }
-  
-  .cast-card h1 {
-    margin: 0;
-    font-size: 18px;
-    color: #ffffff;
-  }
-  
-  .cast-card h3 {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #ffffff;
-  }
-  
-  /* Action buttons */
-  .cast-card .actions button {
-    padding: 8px 15px;
-    margin: 0 5px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  .cast-card .actions .edit-button {
-    background-color: #007bff;
-    color: white;
-    width: 300px;
-  }
-  
-  .cast-card .actions .delete-button {
-    background-color: #dc3545;
-    color: white;
-    width: 300px;
-    margin-top: 20px;
-  }
-  
-  .cast-card .actions button:hover {
-    opacity: 60%;
-  }
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 620px;
+  margin-bottom: 20px;
+}
 
-  .button-Import{
-    width: 300px;
-    margin-left: 10px;
+.button-Add, .button-Import {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 50%;
+  max-width: 300px;
+}
 
-  }
+.add-edit-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-  .button-SearchImp{
-    width: 300px;
-    margin-left: 10px;
-  }
+.add-edit-form label {
+  font-size: 14px;
+}
 
-  .search-MovieImp{
-    width: 300px;
-    margin-left: 10px;
-  }
-  
+.add-edit-form input {
+  padding: 8px;
+  font-size: 14px;
+  width: 250px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cast-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0202023d;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  margin: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex-shrink: 0;
+
+}
+
+.cast-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.cast-card .info {
+  margin-top: 10px;
+}
+
+.cast-card .actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.edit-button, .delete-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.button-Import {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.imported-cast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.saved-cast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.imported-cast-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.imported-cast-list .cast-card {
+  width: 150px;
+}
+
+/* Updated Photos Search Gallery */
+.photos-import-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.photos-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+}
+
+.photos-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.photos-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.photos-import-save-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.photos-import-save-button:hover {
+  background-color: #005f7a;
+}
+
+/* Saved Photos Gallery */
+.photos-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.photos-item-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.photos-edit-button,
+.photos-delete-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.photos-edit-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.photos-delete-button {
+  background-color: #f44336;
+  color: white;
+}

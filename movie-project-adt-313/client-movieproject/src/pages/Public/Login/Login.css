@@ -7,10 +7,9 @@
   }
 }
 
-.Register {
+.Login {
   height: 100vh;
   display: flex;
-  margin: auto;
   justify-content: center;
   align-items: center;
   background: url('C:\\Users\\acema\\Downloads\\animated characters___.jpg') repeat-x;
@@ -18,23 +17,23 @@
   animation: moveBackground 20s linear infinite;
 }
 
-.main-container-register {
-  background: rgba(255, 255, 255, 0.808);
+.main-container-login {
+  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  color: #0056b3;
-  max-width: 350px;
+  width: 350px;
+  color: rgb(54, 67, 208);
 }
 
-.form-container-register h3 {
+.form-container-login h3 {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.form-group-register {
-  margin-bottom: 5px;
+.form-group-emailLogin,
+.form-group-passwordLogin {
+  margin-bottom: 15px;
 }
 
 input {
@@ -50,7 +49,7 @@ input {
   font-size: 12px;
 }
 
-.submit-container-register {
+.submit-container-login {
   margin-top: 20px;
   text-align: center;
 }
@@ -73,31 +72,31 @@ button:hover:enabled {
   background-color: #0056b3;
 }
 
-.show-password-register {
+.show-password-login {
   margin-top: 10px;
   color: #007bff;
   cursor: pointer;
   text-align: right;
 }
 
-.login-container {
+.register-container {
   margin-top: 20px;
   text-align: center;
 }
 
-.login-container a {
+.register-container a {
   color: #007bff;
   text-decoration: none;
 }
 
-.login-container a:hover {
+.register-container a:hover {
   text-decoration: underline;
 }
 
-.email-reg{
+.email-login{
   width: 330px;
 }
 
-.pass-reg{
+.password-login{
   width: 330px;
 }

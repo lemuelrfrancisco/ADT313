@@ -1,0 +1,54 @@
+/* Card Container */
+.card {
+  max-width: 200px; /* Slightly larger cards for better visuals */
+  border-radius: 12px; /* Smooth, rounded corners */
+  background-color: #ffffff; /* Neutral background */
+  overflow: hidden; /* Contain child elements within card bounds */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Card Image */
+.card img {
+  width: 100%; /* Full width of the card */
+  height: 270px; /* Consistent height */
+  object-fit: cover; /* Crops image to fit within container */
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+/* Card Text */
+.card span {
+  display: block;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444444; /* Dark gray for readability */
+  text-transform: capitalize; /* Uniform text formatting */
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-8px); /* Lift card upwards */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+}
+
+.card:hover img {
+  transform: scale(1.05); /* Slight zoom for focus */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    max-width: 150px; /* Smaller cards for smaller screens */
+  }
+
+  .card img {
+    height: 220px; /* Adjusted image height */
+  }
+
+  .card span {
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+}

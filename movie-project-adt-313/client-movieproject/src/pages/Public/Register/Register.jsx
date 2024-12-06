@@ -74,7 +74,7 @@ function Register() {
     }
 
     try {
-      const response = await axios.post('/admin/register', {
+      const response = await axios.post('/user/register', {
         email,
         firstName,
         middleName,
@@ -83,10 +83,9 @@ function Register() {
         password,
       });
   
-      // Show success notification
+      
       alert('Account created successfully!');
   
-      // Navigate to login after account creation
       navigate('/');
     } catch (error) {
       console.error('Error during registration:', error);

@@ -1,0 +1,203 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Movie Details Wrapper */
+.movie-details {
+    width: 80%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 2rem;
+}
+
+/* Movie Header (Title and Description beside the Poster) */
+.movie-header {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+    flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+}
+
+/* Movie Poster */
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    max-width: 500px;   
+    max-height: 1000px;
+    display: flex;
+}
+
+.movie-poster img:hover {
+    transform: scale(1.05);
+}
+
+/* Movie Information */
+.movie-info {
+    text-align: left;
+    flex: 1; 
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #ddd;
+}
+
+.movie-meta {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+/* Banner Section */
+.banner {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Movie Meta Information */
+.movie-meta h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #bbb;
+}
+
+/* Cast & Crew Section */
+h2, .movie-meta h4 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+li img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+li span {
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+/* Video Section */
+.video-iframe {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Photos Section */
+.photos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.photos-container img {
+    width: 220px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.photos-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .movie-details {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .movie-header {
+        flex-direction: column; /* Stack title and description under poster on smaller screens */
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p, .movie-meta h4 {
+        font-size: 1rem;
+    }
+
+    .photos-container img {
+        width: 160px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-details {
+        width: 95%;
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .photos-container img {
+        width: 120px;
+        height: 80px;
+    }
+}

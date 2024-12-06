@@ -28,7 +28,6 @@ function Login() {
     switch (type) {
       case 'email':
         setEmail(event.target.value);
-
         break;
 
       case 'password':
@@ -44,26 +43,31 @@ function Login() {
     const data = { email, password };
     setStatus('loading');
 
-    await axios({
-      method: 'post',
-      url: '/admin/login',
-      data,
-      headers: { 'Access-Control-Allow-Origin': '*' },
-    })
-      .then((res) => {
-        console.log(res);
-        //store response access token to localstorage
-        localStorage.setItem('accessToken', res.data.access_token);
-        localStorage.setItem('user' , JSON.stringify(res.data.user));
-        navigate('/main/movies');
-        setStatus('idle');
-      })
-      .catch((e) => {
-        setError(e.response.data.message);
-        console.log(e);
-        setStatus('idle');
-        //alert(e.response.data.message);
+    try {
+      const res = await axios({
+        method: 'post',
+        url: '/user/login',
+        data,
+        headers: { 'Access-Control-Allow-Origin': '*' },
       });
+
+      
+      const userRole = res.data.user.role;
+      if (userRole !== 'user') {
+        setError('Only users can log in. Admins cannot log in here.');
+        setStatus('idle');
+        return;
+      }
+
+      localStorage.setItem('accessToken', res.data.access_token);
+      localStorage.setItem('user', JSON.stringify(res.data.user));
+      navigate('/main/movies');
+      setStatus('idle');
+    } catch (e) {
+      setError(e.response.data.message);
+      console.log(e);
+      setStatus('idle');
+    }
   };
 
   useEffect(() => {

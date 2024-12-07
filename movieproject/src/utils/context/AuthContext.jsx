@@ -1,20 +1,20 @@
 import { useContext, createContext, useState } from 'react';
 
-const MovieContext = createContext({ list: [], selectedMovie: undefined });
+const AuthContext = createContext({ list: [], selectedMovie: undefined });
 
-function MovieContextProvider({ children }) {
+function AuthContextProvider({ children }) {
   const [movieList, setMovieList] = useState([]);
   const [movie, setMovie] = useState(undefined);
   return (
-    <MovieContext.Provider value={{ movieList, setMovieList, movie, setMovie }}>
+    <AuthContext.Provider value={{ movieList, setMovieList, movie, setMovie }}>
       {children}
-    </MovieContext.Provider>
+    </AuthContext.Provider>
   );
 }
 
-export default MovieContextProvider;
+export default AuthContextProvider;
 
-export const useMovieContext = () => {
-  const data = useContext(MovieContext);
+export const useAuthContext = () => {
+  const data = useContext(AuthContext);
   return data;
 };

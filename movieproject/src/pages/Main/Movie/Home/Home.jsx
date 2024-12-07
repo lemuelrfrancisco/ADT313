@@ -3,12 +3,12 @@ import './Home.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import MovieCards from '../../../../components/MovieCards/MovieCards';
-import { useMovieContext } from '../../../../context/MovieContext';
+import { useAuthContext } from '../../../../utils/context/AuthContext';
 
 const Home = () => {
   const navigate = useNavigate();
   const [featuredMovie, setFeaturedMovie] = useState(null);
-  const { movieList, setMovieList, setMovie } = useMovieContext();
+  const { movieList, setMovieList, setMovie } = useAuthContext();
 
   const getMovies = () => {
     axios

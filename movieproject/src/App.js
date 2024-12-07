@@ -3,7 +3,7 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import Home from './pages/Main/Movie/Home/Home';
-import MovieContextProvider from './context/MovieContext';
+import AuthContextProvider from './utils/context/AuthContext';
 import View from './pages/Main/Movie/View/View';
 import Login from './pages/Public/Login/Login';
 import Register from './pages/Public/Register/Register';
@@ -36,9 +36,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className='App'>
-      <MovieContextProvider>
+      <AuthContextProvider>
         <RouterProvider router={router} />
-      </MovieContextProvider>
+      </AuthContextProvider>
     </div>
   );
 }

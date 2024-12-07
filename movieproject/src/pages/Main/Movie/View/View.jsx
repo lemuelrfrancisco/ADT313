@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import { useMovieContext } from '../../../../context/MovieContext';
+import { useAuthContext } from '../../../../utils/context/AuthContext';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function View() {
-  const { movie, setMovie } = useMovieContext();
+  const { movie, setMovie } = useAuthContext();
   const { movieId } = useParams();
   const navigate = useNavigate();
 

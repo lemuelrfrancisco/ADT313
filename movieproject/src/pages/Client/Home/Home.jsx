@@ -3,7 +3,7 @@ import { AuthContext } from '../../../utils/context/AuthContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
-import MovieCards from '../../../components/movieCards/MovieCards';
+import MovieCards from '../../../components/MovieCards/MovieCards';
 
 function Home() {
   const { auth, lists, setLists, setMovie } = useContext(AuthContext);

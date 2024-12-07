@@ -1,0 +1,35 @@
+html,
+body,
+.App {
+  background-color: #282c34;
+  color: white;
+  height: 100vh;
+}
+.App {
+  padding: 1rem;
+}
+
+body {
+  margin-top: -16px;
+}
+
+.navigation {
+  text-align: left;
+  cursor: pointer;
+}
+
+a {
+  color: white;
+}
+.navigation li:first-child {
+  list-style-type: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+.problem7tr:hover,
+.problem7tr.selected {
+  background-color: brown;
+}

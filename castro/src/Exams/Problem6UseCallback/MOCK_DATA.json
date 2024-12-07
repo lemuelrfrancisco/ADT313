@@ -1,0 +1,352 @@
+[
+  {
+    "vin": "WBA3N9C57EF184915",
+    "make": "Mercedes-Benz",
+    "model": "600SL",
+    "year": 1993,
+    "color": "Goldenrod"
+  },
+  {
+    "vin": "WP1AA2A25BL217490",
+    "make": "Jaguar",
+    "model": "X-Type",
+    "year": 2008,
+    "color": "Violet"
+  },
+  {
+    "vin": "YV4902DZ7C2516633",
+    "make": "Audi",
+    "model": "100",
+    "year": 1993,
+    "color": "Goldenrod"
+  },
+  {
+    "vin": "WBAGL63594D032098",
+    "make": "Toyota",
+    "model": "Tundra",
+    "year": 2008,
+    "color": "Blue"
+  },
+  {
+    "vin": "WBAWB73558P256851",
+    "make": "Mercury",
+    "model": "Cougar",
+    "year": 2001,
+    "color": "Teal"
+  },
+  {
+    "vin": "WP0AB2A93FS489742",
+    "make": "Chevrolet",
+    "model": "Suburban 2500",
+    "year": 2012,
+    "color": "Turquoise"
+  },
+  {
+    "vin": "WAUAF68E15A725451",
+    "make": "Toyota",
+    "model": "Tacoma Xtra",
+    "year": 1998,
+    "color": "Puce"
+  },
+  {
+    "vin": "SALCP2BG8FH432952",
+    "make": "Cadillac",
+    "model": "Escalade EXT",
+    "year": 2007,
+    "color": "Pink"
+  },
+  {
+    "vin": "5FRYD3H85FB718560",
+    "make": "Ford",
+    "model": "Econoline E150",
+    "year": 1997,
+    "color": "Fuscia"
+  },
+  {
+    "vin": "WBAKF5C54DJ929309",
+    "make": "Lexus",
+    "model": "LS",
+    "year": 2009,
+    "color": "Blue"
+  },
+  {
+    "vin": "KNAFU6A25B5292152",
+    "make": "Chevrolet",
+    "model": "Impala",
+    "year": 2001,
+    "color": "Maroon"
+  },
+  {
+    "vin": "WBADT63422C642695",
+    "make": "Chevrolet",
+    "model": "Astro",
+    "year": 1999,
+    "color": "Green"
+  },
+  {
+    "vin": "WDDHF7GB6EA595588",
+    "make": "Alfa Romeo",
+    "model": "Spider",
+    "year": 1994,
+    "color": "Indigo"
+  },
+  {
+    "vin": "1FTSW2B59AE926698",
+    "make": "Pontiac",
+    "model": "Sunfire",
+    "year": 2001,
+    "color": "Indigo"
+  },
+  {
+    "vin": "WAUUL98E66A800881",
+    "make": "Lexus",
+    "model": "LS",
+    "year": 1994,
+    "color": "Fuscia"
+  },
+  {
+    "vin": "1ZVBP8AM4B5263227",
+    "make": "Mercedes-Benz",
+    "model": "S-Class",
+    "year": 1994,
+    "color": "Yellow"
+  },
+  {
+    "vin": "1D7CW3GK2AS054271",
+    "make": "Pontiac",
+    "model": "Grand Prix",
+    "year": 1983,
+    "color": "Puce"
+  },
+  {
+    "vin": "WAUCFAFH4FN159031",
+    "make": "Ford",
+    "model": "ZX2",
+    "year": 2002,
+    "color": "Crimson"
+  },
+  {
+    "vin": "JH4CU2F63CC461980",
+    "make": "Mitsubishi",
+    "model": "Truck",
+    "year": 1990,
+    "color": "Teal"
+  },
+  {
+    "vin": "WAUGN94F97N526480",
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2012,
+    "color": "Fuscia"
+  },
+  {
+    "vin": "4T1BF3EK3BU409023",
+    "make": "Mazda",
+    "model": "Navajo",
+    "year": 1992,
+    "color": "Crimson"
+  },
+  {
+    "vin": "5NPET4AC0AH705107",
+    "make": "Geo",
+    "model": "Prizm",
+    "year": 1995,
+    "color": "Khaki"
+  },
+  {
+    "vin": "WDCYC3HF6CX826202",
+    "make": "Volkswagen",
+    "model": "Golf",
+    "year": 1992,
+    "color": "Blue"
+  },
+  {
+    "vin": "SAJWJ2GD0F8730014",
+    "make": "Mercedes-Benz",
+    "model": "600SEL",
+    "year": 1993,
+    "color": "Puce"
+  },
+  {
+    "vin": "1GYUCDEF8AR440133",
+    "make": "Chevrolet",
+    "model": "G-Series G10",
+    "year": 1992,
+    "color": "Puce"
+  },
+  {
+    "vin": "WAUSH78E26A173612",
+    "make": "GMC",
+    "model": "Sierra 2500",
+    "year": 2004,
+    "color": "Yellow"
+  },
+  {
+    "vin": "2G4WE587771504484",
+    "make": "Lexus",
+    "model": "LS",
+    "year": 1998,
+    "color": "Goldenrod"
+  },
+  {
+    "vin": "JHMZF1D65ES805075",
+    "make": "GMC",
+    "model": "Vandura 1500",
+    "year": 1994,
+    "color": "Purple"
+  },
+  {
+    "vin": "1FTNF1E84AK792102",
+    "make": "Oldsmobile",
+    "model": "Cutlass Supreme",
+    "year": 1997,
+    "color": "Goldenrod"
+  },
+  {
+    "vin": "WBAPK7C50BF512394",
+    "make": "Land Rover",
+    "model": "Range Rover",
+    "year": 2004,
+    "color": "Maroon"
+  },
+  {
+    "vin": "5GAKRCED6BJ013376",
+    "make": "Dodge",
+    "model": "Intrepid",
+    "year": 1998,
+    "color": "Blue"
+  },
+  {
+    "vin": "2G4WC582681733136",
+    "make": "Lexus",
+    "model": "LS",
+    "year": 1992,
+    "color": "Fuscia"
+  },
+  {
+    "vin": "WA1WYBFE5AD180369",
+    "make": "Mazda",
+    "model": "Miata MX-5",
+    "year": 2003,
+    "color": "Crimson"
+  },
+  {
+    "vin": "1FTEW1E83AF084674",
+    "make": "Honda",
+    "model": "Fit",
+    "year": 2011,
+    "color": "Mauv"
+  },
+  {
+    "vin": "WVGAV3AX0DW069255",
+    "make": "Saab",
+    "model": "9-3",
+    "year": 2000,
+    "color": "Pink"
+  },
+  {
+    "vin": "JM3KE2BE6D0413343",
+    "make": "Ford",
+    "model": "F350",
+    "year": 2012,
+    "color": "Red"
+  },
+  {
+    "vin": "1FTKR1AD9AP079874",
+    "make": "Chevrolet",
+    "model": "Silverado 1500",
+    "year": 2001,
+    "color": "Violet"
+  },
+  {
+    "vin": "1D7CW7GP4AS839975",
+    "make": "Isuzu",
+    "model": "Oasis",
+    "year": 1999,
+    "color": "Fuscia"
+  },
+  {
+    "vin": "WA1LYBFE2AD840967",
+    "make": "Ford",
+    "model": "Aerostar",
+    "year": 1991,
+    "color": "Aquamarine"
+  },
+  {
+    "vin": "WAUUL78E87A887558",
+    "make": "Chevrolet",
+    "model": "Avalanche 1500",
+    "year": 2004,
+    "color": "Yellow"
+  },
+  {
+    "vin": "SCBDR33W48C618122",
+    "make": "Ford",
+    "model": "E150",
+    "year": 2012,
+    "color": "Orange"
+  },
+  {
+    "vin": "WBSDE93432B038568",
+    "make": "Volvo",
+    "model": "S80",
+    "year": 2000,
+    "color": "Aquamarine"
+  },
+  {
+    "vin": "3C6TD5PT1CG724639",
+    "make": "Isuzu",
+    "model": "Ascender",
+    "year": 2005,
+    "color": "Turquoise"
+  },
+  {
+    "vin": "WBADT63431C279564",
+    "make": "Land Rover",
+    "model": "Defender 90",
+    "year": 1997,
+    "color": "Yellow"
+  },
+  {
+    "vin": "2C3CDXEJ6EH524725",
+    "make": "Ford",
+    "model": "F-Series",
+    "year": 2004,
+    "color": "Mauv"
+  },
+  {
+    "vin": "WAUKH98E37A175625",
+    "make": "Chevrolet",
+    "model": "Blazer",
+    "year": 1996,
+    "color": "Violet"
+  },
+  {
+    "vin": "JH4DC53036S115754",
+    "make": "Pontiac",
+    "model": "Sunbird",
+    "year": 1987,
+    "color": "Orange"
+  },
+  {
+    "vin": "1ZVBP8AM5D5587242",
+    "make": "Mercedes-Benz",
+    "model": "E-Class",
+    "year": 1989,
+    "color": "Khaki"
+  },
+  {
+    "vin": "19UUB2F33FA629684",
+    "make": "Toyota",
+    "model": "4Runner",
+    "year": 2006,
+    "color": "Puce"
+  },
+  {
+    "vin": "1GTN2TEH1FZ053410",
+    "make": "Mercedes-Benz",
+    "model": "GL-Class",
+    "year": 2012,
+    "color": "Turquoise"
+  }
+]

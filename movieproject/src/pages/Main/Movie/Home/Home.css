@@ -1,0 +1,75 @@
+.main-containerr {
+  padding: 20px;
+  color: #fff;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-title {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: -25px 0;
+  text-align: justify;
+  margin-left: 105px;
+}
+
+.featured-list-container {
+  width: 84.4%;
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center;    /* Centers the content vertically */
+  border-radius: 4px;
+  margin: 30px auto;      /* Centers the container itself */
+}
+
+
+.featured-backdrop {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  background-size: cover;
+}
+
+.featured-movie-title {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  position: absolute;
+  top: 480px;
+  left: 15px;
+  border-radius: 5px;
+}
+
+.list-container {
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.MovieCards {
+  height: 300px;
+  background-color: #333;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}

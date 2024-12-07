@@ -1,0 +1,54 @@
+.container-movie-card {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   overflow-x: hidden;
+   overflow-y: auto;
+   scrollbar-width: none;
+   -ms-overflow-style: none;
+}
+
+.View-Movie-Poster {
+   width: 100%;
+   border-radius: 10px;
+}
+
+.banner {
+   width: 20%;
+   z-index: 1;
+   border-radius: 10px;
+}
+
+.Movie-Tab-Info {
+   display: flex;
+   justify-content: center;
+   padding: 10px;
+   gap: 20px;
+   position: relative;
+}
+
+.image-backdropPath {
+   position: relative;
+}
+
+.background-overlay {
+   position: absolute;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   background-color: rgba(53, 58, 63, 0.8);
+}
+
+.info-movie-flex {
+   font-size: 10pt;
+   width: 400px;
+   color: white;
+   z-index: 1;
+}
+
+.overview-h3 {
+   font-weight: 300;
+}

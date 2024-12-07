@@ -1,0 +1,133 @@
+.Login {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)), url('bgrgst.jpg'); /* Replace with your image path */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Form Container */
+.main-container {
+  width: 320px;
+  border-radius: 0.75rem; /* Rounded corners */
+  padding: 2rem;
+  color: #f3f4f6; /* Text color */
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  box-shadow: 0px 4px 10px rgba(8, 0, 77, 0.5); /* Subtle shadow */
+  backdrop-filter: blur(5px); /* Adds a glass-like blur effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form Title */
+.main-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* Form Layout */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem; /* Space between form elements */
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  width: 100%; /* Ensures consistent layout */
+}
+
+.form-group label {
+  color: #fff;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 4px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border: 2px solid rgba(167, 139, 250, 1); /* Highlight border on focus */
+}
+
+/* Submit Button */
+.submit-container {
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  background-color: #ff133d; /* Primary button color */
+  padding: 0.75rem;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e6003c; /* Darker red on hover */
+}
+
+/* Register Container */
+.register-container {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+}
+
+.register-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.register-container a:hover {
+  text-decoration: underline;
+}
+
+/* Loading Spinner (Optional) */
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #3498db; /* Spinner color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

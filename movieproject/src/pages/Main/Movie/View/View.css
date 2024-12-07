@@ -1,0 +1,114 @@
+.view-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #121212; /* Dark theme */
+  height: 100vh; /* Ensures it fills the viewport */
+}
+
+.movie-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.banner-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.movie-title {
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.movie-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.movie-overview {
+  width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.section {
+  margin: 30px 0;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #e50914; /* Netflix red for section titles */
+}
+
+.cast-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cast-list li {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.video-gallery {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.video-gallery video {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.video-gallery video:hover {
+  transform: scale(1.05);
+  border-color: #e50914;
+}
+
+.photo-gallery {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.photo-gallery img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.05);
+  border-color: #e50914;
+}

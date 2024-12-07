@@ -1,7 +1,7 @@
 <?php
-class CastsController
+class AdminPhotosController
 {
-    public function __construct(private CastsGateway $gateway, private Auth $auth)
+    public function __construct(private AdminPhotosGateway $gateway, private Auth $auth)
     {
 
     }
@@ -22,7 +22,7 @@ class CastsController
         $cast = $this->gateway->get($id);
         if (!$cast) {
             http_response_code(404);
-            echo json_encode(["message" => "Cast not found"]);
+            echo json_encode(["message" => "Photo not found"]);
             return;
         }
 
@@ -48,7 +48,7 @@ class CastsController
                 $rows = $this->gateway->update($cast, $data);
 
                 echo json_encode([
-                    "message" => "Cast $id updated.",
+                    "message" => "Photo $id updated.",
                     "rows" => $rows
                 ]);
                 break;
@@ -67,7 +67,7 @@ class CastsController
                     break;
                 }
 
-                //file upload for cast image
+                //file upload for photo
                 if (!empty($_FILES['image']['name']) && $type == 'form') {
                     $profile_path = $_FILES['image']['name'];
                     $temp_path = $_FILES['image']['tmp_name'];
@@ -75,7 +75,7 @@ class CastsController
                     $temp = explode(".", $_FILES["image"]["name"]);
                     $new_profile_path = $temp[0].round(microtime(true)) . '.' . end($temp);
 
-                    $upload_path = "uploads/casts";
+                    $upload_path = "uploads/photos/";
                     $file_ext = strtolower(pathinfo($profile_path, PATHINFO_EXTENSION));
 
                     $valid_extensions = array("jpeg", "jpg", "png", "gif");
@@ -98,7 +98,7 @@ class CastsController
                 $rows = $this->gateway->update($cast, $data);
 
                 echo json_encode([
-                    "message" => "Cast $id updated.",
+                    "message" => "Photo $id updated.",
                     "rows" => $rows
                 ]);
                 break;
@@ -106,7 +106,7 @@ class CastsController
             case "DELETE":
                 $rows = $this->gateway->delete($id, $this->auth->getUserID());
                 echo json_encode([
-                    "message" => "Cast $id deleted",
+                    "message" => "Photo $id deleted",
                     "rows" => $rows
                 ]);
                 break;
@@ -132,15 +132,15 @@ class CastsController
        
                 $errors = $this->getValidationErrors($data, true, $type  );
 
-                //file upload for cast image
-                if (!empty($_FILES['profilePath']['name']) && $type == 'form') {
-                    $profile_path = $_FILES['profilePath']['name'];
-                    $temp_path = $_FILES['profilePath']['tmp_name'];
-                    $file_size = $_FILES['profilePath']['size'];
-                    $temp = explode(".", $_FILES["profilePath"]["name"]);
+                //file upload for image
+                if (!empty($_FILES['image']['name']) && $type == 'form') {
+                    $profile_path = $_FILES['image']['name'];
+                    $temp_path = $_FILES['image']['tmp_name'];
+                    $file_size = $_FILES['image']['size'];
+                    $temp = explode(".", $_FILES["image"]["name"]);
                     $new_profile_path = $temp[0].round(microtime(true)) . '.' . end($temp);
 
-                    $upload_path = "uploads/casts";
+                    $upload_path = "uploads/photos/";
                     $file_ext = strtolower(pathinfo($profile_path, PATHINFO_EXTENSION));
 
                     $valid_extensions = array("jpeg", "jpg", "png", "gif");
@@ -168,11 +168,12 @@ class CastsController
                     break;
                 }
                 $data['userId'] = $this->auth->getUserID();
+                
                 $id = $this->gateway->create($data);
 
                 http_response_code(201);
                 echo json_encode([
-                    "message" => "Cast created",
+                    "message" => "Photo created",
                     "id" => $id
                 ]);
                 break;
@@ -190,17 +191,9 @@ class CastsController
             $errors[] = "Movie ID is required.";
         }
 
-        if ($is_new && empty($data["name"])) {
-            $errors[] = "Name is required.";
-        }
-
-        if ($is_new && empty($data["url"])) {
-            $errors[] = "Photo URL is required.";
-        }
-
-        if ($is_new && empty($data["characterName"]) && $type === 'json') {
-            $errors[] = "Character Name image is required.";
-        }
+        // if ($is_new && empty($data["url"])) {
+        //     $errors[] = "Photo URL is required.";
+        // }
 
         return $errors;
     }

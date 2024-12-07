@@ -61,7 +61,7 @@ class UserGateway
         }
     }
 
-    public function changePassword(array $current, array $new, string $id, string $email): int
+    public function changePassword(array $current, array $new, string $email): int
     {
         $sql = "UPDATE users SET password = :password WHERE email = :email";
         $res = $this->conn->prepare($sql);

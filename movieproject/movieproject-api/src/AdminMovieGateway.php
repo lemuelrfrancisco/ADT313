@@ -1,6 +1,6 @@
 <?php
 
-class MovieGateway
+class AdminMovieGateway
 {
     private PDO $conn;
     public function __construct(Database $database)
@@ -8,14 +8,47 @@ class MovieGateway
         $this->conn = $database->getConnection();
     }
 
-    public function getAll(): array
+    public function getAll(string $userId): array
     {
-        $sql = "SELECT * FROM movies";
-        $res = $this->conn->query($sql);
+        $sql = "SELECT * FROM movies WHERE userId = :userId";
+        $res = $this->conn->prepare($sql);
+        $res->bindValue(":userId",$userId, PDO::PARAM_INT);
+
         $data = [];
+        $res->execute();
 
         while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
             $row["isFeatured"] = (bool) $row["isFeatured"];
+
+            $castSql = "SELECT * FROM casts WHERE movieId = :movieId";
+            $res = $this->conn->prepare($castSql);
+            $res->bindValue(":movieId", $id, PDO::PARAM_INT);
+            $res->execute();
+            
+            $row["casts"] = [];
+            while ($castsRow = $res->fetch(PDO::FETCH_ASSOC)) {
+                $row["casts"][] = $castsRow;
+            }
+
+            $photosSql = "SELECT * FROM photos WHERE movieId = :movieId";
+            $res = $this->conn->prepare($photosSql);
+            $res->bindValue(":movieId", $id, PDO::PARAM_INT);
+            $res->execute();
+            
+            $row["photos"] = [];
+            while ($castsRow = $res->fetch(PDO::FETCH_ASSOC)) {
+                $row["photos"][] = $castsRow;
+            }
+
+            $videosSql = "SELECT * FROM videos WHERE movieId = :movieId";
+            $res = $this->conn->prepare($videosSql);
+            $res->bindValue(":movieId", $id, PDO::PARAM_INT);
+            $res->execute();
+            
+            $data["videos"] = [];
+            while ($videosRow = $res->fetch(PDO::FETCH_ASSOC)) {
+                $data["videos"][] = $videosRow;
+            }
             $data[] = $row;
         }
 
@@ -37,17 +70,19 @@ class MovieGateway
         $res->bindValue(":voteAverage",$data["voteAverage"], PDO::PARAM_STR);
         $res->bindValue(":backdropPath",$data["backdropPath"], PDO::PARAM_STR);
         $res->bindValue(":posterPath",$data["posterPath"], PDO::PARAM_STR);
-        $res->bindValue(":isFeatured",(bool) $data["isFeatured"], PDO::PARAM_BOOL);
+        $res->bindValue(":isFeatured",(bool) $data["isFeatured"] ?? false, PDO::PARAM_BOOL);
 
         $res->execute();
         return $this->conn->lastInsertId();
     }
 
-    public function get(string $id)
+    public function get(string $id, string $userId)
     {
-        $sql = "SELECT * FROM movies WHERE tmdbId  = :id";
+        $sql = "SELECT * FROM movies WHERE id = :id AND userId = :userId";
         $res = $this->conn->prepare($sql);
         $res->bindValue(":id", $id, PDO::PARAM_INT);
+        $res->bindValue(":userId", $userId, PDO::PARAM_INT);
+
         $res->execute();
         $data = $res->fetch(PDO::FETCH_ASSOC);
 
@@ -94,7 +129,7 @@ class MovieGateway
 
     public function update(array $current, array $new): int
     {
-        $sql = "UPDATE movies SET tmdbId=:tmdbId, title=:title, overview=:overview, popularity=:popularity, releaseDate=:releaseDate, voteAverage=:voteAverage, backdropPath=:backdropPath, posterPath=:posterPath, isFeatured=:isFeatured, dateUpdated = NOW() WHERE id =:id AND userId = :userId";
+        $sql = "UPDATE movies SET tmdbId=:tmdbId, title=:title, overview=:overview, popularity=:popularity, releaseDate=:releaseDate, voteAverage=:voteAverage, backdropPath=:backdropPath, posterPath=:posterPath, isFeatured=:isFeatured WHERE id =:id AND userId = :userId";
         $res = $this->conn->prepare($sql);
 
         $res->bindValue(":userId",$current["userId"], PDO::PARAM_INT);
@@ -116,31 +151,14 @@ class MovieGateway
 
     public function delete(string $id, string $userId): int
     {
-        $sqlCasts = "DELETE FROM casts WHERE movieId = :movieId AND userId = :userId";
-        $resCasts = $this->conn->prepare($sqlCasts);
-        $resCasts->bindValue(":movieId", $id, PDO::PARAM_INT);
-        $resCasts->bindValue(":userId", $userId, PDO::PARAM_INT);
-        $resCasts->execute();
+        // $sql = "DELETE FROM movies WHERE id = :id AND userId = :userId";
+        $sql = "DELETE FROM movies WHERE id = :id";
+        $res = $this->conn->prepare($sql);
+        $res->bindValue(":id", $id, PDO::PARAM_INT);
+        // $res->bindValue(":userId", $userId, PDO::PARAM_INT);
 
-        $sqlVideos = "DELETE FROM videos WHERE movieId = :movieId AND userId = :userId";
-        $resVideos = $this->conn->prepare($sqlVideos);
-        $resVideos->bindValue(":movieId", $id, PDO::PARAM_INT);
-        $resVideos->bindValue(":userId", $userId, PDO::PARAM_INT);
-        $resVideos->execute();
+        $res->execute();
 
-        $sqlPhotos = "DELETE FROM photos WHERE movieId = :movieId AND userId = :userId";
-        $resPhotos = $this->conn->prepare($sqlPhotos);
-        $resPhotos->bindValue(":movieId", $id, PDO::PARAM_INT);
-        $resPhotos->bindValue(":userId", $userId, PDO::PARAM_INT);
-        $resPhotos->execute();
-
-        //$sqlMovie = "DELETE FROM movies WHERE tmdbId = :tmdbId AND userId = :userId";
-        $sqlMovie = "DELETE FROM movies WHERE tmdbId = :tmdbId";
-        $resMovie = $this->conn->prepare($sqlMovie);
-        $resMovie->bindValue(":tmdbId", $id, PDO::PARAM_INT);
-        //$resMovie->bindValue(":userId", $userId, PDO::PARAM_INT);
-        $resMovie->execute();
-
-        return $resCasts->rowCount() + $resVideos->rowCount() + $resPhotos->rowCount() + $resMovie->rowCount();
+        return $res->rowCount();
     }
 }

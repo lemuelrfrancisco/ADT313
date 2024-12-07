@@ -121,9 +121,9 @@ class VideosController
     private function processCollectionRequest(string $method): void
     {
         switch ($method) {
-            case "GET":
-                echo json_encode($this->gateway->getAll());
-                break;
+            // case "GET":
+            //     echo json_encode($this->gateway->getAll());
+            //     break;
 
             case "POST":
                 $jsonData = (array) json_decode(file_get_contents("php://input"), true);

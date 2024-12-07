@@ -1,7 +1,7 @@
 <?php
-class CastsController
+class AdminCastsController
 {
-    public function __construct(private CastsGateway $gateway, private Auth $auth)
+    public function __construct(private AdminCastsGateway $gateway, private Auth $auth)
     {
 
     }
@@ -32,7 +32,7 @@ class CastsController
                 break;
 
             case "PATCH":
-                $jsonData = 
+                $jsonData =  (array) json_decode(file_get_contents("php://input"), true);
                 $data = (array) json_decode(file_get_contents("php://input"), true);
                 $type = 'json';
 
@@ -54,9 +54,9 @@ class CastsController
                 break;
 
             case "POST":
-              
-                $data =  $_POST;
-                $type =  'form';
+                $jsonData = (array) json_decode(file_get_contents("php://input"), true);
+                $data = $jsonData ? $jsonData : $_POST;
+                $type = $jsonData ? 'json' : 'form';
 
 
                 $errors = $this->getValidationErrors($data, false);
@@ -129,7 +129,6 @@ class CastsController
                 $jsonData = (array) json_decode(file_get_contents("php://input"), true);
                 $data = $jsonData ? $jsonData : $_POST;
                 $type = $jsonData ? 'json' : 'form';
-       
                 $errors = $this->getValidationErrors($data, true, $type  );
 
                 //file upload for cast image

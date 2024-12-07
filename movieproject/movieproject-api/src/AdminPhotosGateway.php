@@ -1,6 +1,6 @@
 <?php
 
-class PhotosGateway
+class AdminPhotosGateway
 {
     private PDO $conn;
     public function __construct(Database $database)
@@ -12,15 +12,10 @@ class PhotosGateway
     {
         $sql = "SELECT * FROM photos WHERE movieId = :movieId";
         $res = $this->conn->prepare($sql);
-        $res->bindValue(":movieId",$movieId, PDO::PARAM_INT);
+        $res->bindValue(":movieId",$data["movieId"], PDO::PARAM_INT);
 
         $res->execute();
-        $data = [];
-
-        while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
-            $data[] = $row;
-        }
-
+        $data = $res->fetch(PDO::FETCH_ASSOC);
         return $data;
     }
 
@@ -52,14 +47,15 @@ class PhotosGateway
 
     public function update(array $current, array $new): int
     {
-        $sql = "UPDATE photos SET movieId=:movieId, url=:url, description=:description, dateupdated=NOW() WHERE id=:id AND userId=:userId";
+        $sql = "UPDATE photos SET movieId=:movieId, userId=:userId, url=:url, description=:description WHERE id =:id AND userId = :userId";
         $res = $this->conn->prepare($sql);
+        $dateUpdated = (new DateTime())->getTimeStamp();
+        $res->bindValue(":userId",$current["userId"], PDO::PARAM_INT);
         $res->bindValue(":movieId",$new["movieId"] ?? $current["movieId"], PDO::PARAM_INT);
-        //$res->bindValue(":userId2",$current["userId"], PDO::PARAM_STR);
         $res->bindValue(":url",$new["url"] ?? $current["url"], PDO::PARAM_STR);
         $res->bindValue(":description",$new["description"] ?? $current["description"], PDO::PARAM_STR);
+        //$res->bindValue(":dateUpdated",$dateUpdated, PDO::PARAM_STR);
         $res->bindValue(":id", $current["id"], PDO::PARAM_INT);
-        $res->bindValue(":userId",$current["userId"], PDO::PARAM_INT);
 
         $res->execute();
 

@@ -1,6 +1,6 @@
 <?php
 
-class PhotosGateway
+class AdminCastsGateway
 {
     private PDO $conn;
     public function __construct(Database $database)
@@ -10,30 +10,26 @@ class PhotosGateway
 
     public function getAll($movieId): array
     {
-        $sql = "SELECT * FROM photos WHERE movieId = :movieId";
+        $sql = "SELECT * FROM casts WHERE movieId = :movieId";
         $res = $this->conn->prepare($sql);
-        $res->bindValue(":movieId",$movieId, PDO::PARAM_INT);
+        $res->bindValue(":movieId",$data["movieId"], PDO::PARAM_INT);
 
         $res->execute();
-        $data = [];
-
-        while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
-            $data[] = $row;
-        }
-
+        $data = $res->fetch(PDO::FETCH_ASSOC);
         return $data;
     }
 
     public function create(array $data): string
     {
-        $sql = "INSERT INTO photos (movieId, userId, url, description) 
-                VALUES (:movieId, :userId, :url, :description)";
+        $sql = "INSERT INTO casts (movieId, userId, name, url, characterName) 
+                VALUES (:movieId, :userId, :name, :url, :characterName)";
         $res = $this->conn->prepare($sql);
 
         $res->bindValue(":userId",$data["userId"], PDO::PARAM_INT);
         $res->bindValue(":movieId",$data["movieId"], PDO::PARAM_INT);
+        $res->bindValue(":name",$data["name"], PDO::PARAM_STR);
         $res->bindValue(":url",$data["url"], PDO::PARAM_STR);
-        $res->bindValue(":description",$data["description"], PDO::PARAM_STR);
+        $res->bindValue(":characterName",$data["characterName"], PDO::PARAM_STR);
 
         $res->execute();
         return $this->conn->lastInsertId();
@@ -41,7 +37,7 @@ class PhotosGateway
 
     public function get(string $id)
     {
-        $sql = "SELECT * FROM photos WHERE id = :id";
+        $sql = "SELECT * FROM casts WHERE id = :id";
         $res = $this->conn->prepare($sql);
         $res->bindValue(":id", $id, PDO::PARAM_INT);
         $res->execute();
@@ -52,14 +48,15 @@ class PhotosGateway
 
     public function update(array $current, array $new): int
     {
-        $sql = "UPDATE photos SET movieId=:movieId, url=:url, description=:description, dateupdated=NOW() WHERE id=:id AND userId=:userId";
+        $sql = "UPDATE casts SET name=:name,url=:url,characterName=:characterName, dateUpdated=:dateUpdated WHERE id =:id AND userId = :userId";
         $res = $this->conn->prepare($sql);
-        $res->bindValue(":movieId",$new["movieId"] ?? $current["movieId"], PDO::PARAM_INT);
-        //$res->bindValue(":userId2",$current["userId"], PDO::PARAM_STR);
-        $res->bindValue(":url",$new["url"] ?? $current["url"], PDO::PARAM_STR);
-        $res->bindValue(":description",$new["description"] ?? $current["description"], PDO::PARAM_STR);
-        $res->bindValue(":id", $current["id"], PDO::PARAM_INT);
+        $dateUpdated = (new DateTime())->getTimeStamp();
         $res->bindValue(":userId",$current["userId"], PDO::PARAM_INT);
+        $res->bindValue(":name",$new["name"] ?? $current["name"], PDO::PARAM_STR);
+        $res->bindValue(":url",$new["url"] ?? $current["url"], PDO::PARAM_STR);
+        $res->bindValue(":characterName",$new["characterName"] ?? $current["characterName"], PDO::PARAM_STR);
+        $res->bindValue(":dateUpdated",$dateUpdated, PDO::PARAM_STR);
+        $res->bindValue(":id", $current["id"], PDO::PARAM_INT);
 
         $res->execute();
 
@@ -68,7 +65,7 @@ class PhotosGateway
 
     public function delete(string $id, string $userId): int
     {
-        $sql = "DELETE FROM photos WHERE id = :id AND userId = :userId";
+        $sql = "DELETE FROM casts WHERE id = :id AND userId = :userId";
         $res = $this->conn->prepare($sql);
         $res->bindValue(":id", $id, PDO::PARAM_INT);
         $res->bindValue(":userId", $userId, PDO::PARAM_INT);
